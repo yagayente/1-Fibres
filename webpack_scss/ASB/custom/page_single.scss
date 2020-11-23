@@ -1,0 +1,58 @@
+@import "../ASB.scss";
+
+article {
+
+
+
+.col_left {
+  width: 66.666%;
+  float: left;
+  @include responsive_padding
+  ( 0 $marge_small 0 $marge_small,
+    0 $marge_medium/2 0 $marge_medium,
+    0 $marge_large/2 0 $marge_large);
+    @include respond-to(small-screens) {
+    width: 100%; display: inline-block; float: none;}
+  img {
+    width: 100%;
+  }
+}
+.col_right {
+    width: 33.333%;
+    float: right;
+    right:0px;
+    bottom: 0;
+    position: fixed;
+    height: 100vh;
+    @include responsive_padding
+    ( 0 $marge_small 0 $marge_small,
+      0 $marge_medium 0 $marge_medium,
+      0 $marge_large 0 $marge_large);
+      @include respond-to(small-screens) {
+      width: 100%; display: inline-block; float: none; position: relative;
+      right: unset; height: unset; bottom: unset; padding-bottom: $marge_small;}
+    .content_right_top {
+      padding-top: $hauteur_entete;
+      @include fds2_typo_2;
+      @include respond-to(small-screens) {padding-top: $marge_small; padding-bottom: $marge_small;}
+    }
+    .content_right_bottom {
+      width: 100%;
+      @include positionbottom;
+      @include respond-to(small-screens) {
+        position: relative;
+      }
+      @include responsive_padding
+      ( 0 0 $marge_small 0,
+        0 0 $marge_medium 0,
+        0 0 $marge_large 0);
+        ul.liste_appellation_description {
+          @include liste_appellation_description($fds_liste);
+          @include fds2_typo_3;
+          a {  display: block; text-decoration: none;}
+        }
+}
+
+
+}
+}

@@ -1,0 +1,55 @@
+$input_margin : 20px;
+$input_padding : 20px;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+input[type=checkbox], input[type=radio] {
+  position: absolute;
+  left: -9999px;
+}
+
+label.checkbox, label.radio  {
+  padding: $input_padding;
+  margin-bottom: $input_margin;
+  margin-right: $input_margin;
+  position: relative;
+  float: left;
+  color: $black;
+  background-color: $color_disabled;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color .2s, box-shadow .2s;
+}
+/*
+label.checkbox::before, label.radio::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: $space;
+  bottom: $space;
+  left: $space;
+  width: 10px;
+  border: $trait;
+  border-radius: 100px;
+  transition: background-color .2s;
+}
+*/
+input[type=checkbox]:checked + label.checkbox, input[type=radio]:checked + label.radio  {
+  background-color: $color_hover;
+  color: $white;
+}
+
+input[type=checkbox]:checked + label.checkbox::before, input[type=radio]:checked + label.radio::before {
+  background-color: white;
+  border-color: white;
+}
+input[type=checkbox]:hover + label.checkbox, input[type=radio]:hover + label.radio{
+  background-color: $color_hover;
+  color: $white;
+}
+input[type=checkbox]:hover + label.checkbox::before, input[type=radio]:hover + label.radio::before {
+  border: $border;
+}

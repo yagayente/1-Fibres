@@ -1,0 +1,26 @@
+@import "responsive.scss";
+
+
+@supports not (-ms-high-contrast: none) { /* Non-IE styles here */
+.back img{
+     object-fit: cover;
+     height: 100%;
+     width: 100%;
+     object-position: 50% 50%;
+   }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /* IE styles here */
+  .back img {
+    height: none;
+    width: none;
+    object-position: none;
+    object-fit: none;
+    min-height: 100%;
+    min-width: 102%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}

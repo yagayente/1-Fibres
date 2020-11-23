@@ -1,0 +1,79 @@
+# Each page blueprint must have a title, the title may be different from the file name
+title: Projet
+
+# Each page can have an icon that is shown in page listings when no preview image is available.
+icon: 🖼
+
+# Page status can be limited, here to `draft` and `listed`.
+# More about page status: https://getkirby.com/docs/reference/panel/blueprints/page#statuses
+status:
+  draft: true
+  listed: true
+
+# Define the form layout with two columns
+# Columns are optional but help structure the form layout
+# The first column defines an files section, the second a set of fields
+# More about different types of sections: https://getkirby.com/docs/reference/panel/sections
+# More about columns: https://getkirby.com/docs/guide/blueprints/layout#defining-columns
+
+columns:
+  - width: 3/3
+    sections:
+      ## The `images` files section shows all images of the current page that use the `image` template
+      images:
+        type: files
+        layout: cards
+        template: image
+        info: "{{ file.dimensions }}"
+        image:
+          ratio: 5/4
+          cover: true
+        min: 1
+        size: small
+
+  - width: 3/3
+    # The second column contains a set of fields
+    # List of all available field types: https://getkirby.com/docs/reference/panel/fields
+    fields:
+      titre_page:
+          label: Titre
+          type: text
+      introduction:
+          label: Introduction
+          type: text  
+      date:
+        type: date
+        time: true
+        default: now
+      cover:
+        type: files
+        multiple: false
+      headline:
+        type: text
+      description:
+        type: textarea
+      tags: true
+      collaborators:
+        label: Collaborateurs
+        type: structure
+        fields:
+          naming:
+            label: Nom
+            type: text
+            width: 1/2
+          url:
+            label: URL
+            type: url
+            width: 1/2
+      liste:
+        label: Détails
+        type: structure
+        fields:
+          appellation:
+            label: Appellation
+            type: text
+            width: 1/2
+          description:
+            label: Description
+            type: text
+            width: 1/2

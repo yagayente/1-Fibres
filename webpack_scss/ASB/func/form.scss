@@ -1,0 +1,99 @@
+@import "mixin.scss";
+
+
+legend {
+    color: $black;
+}
+
+
+label{
+  display: inline-block;
+}
+
+textarea{
+
+}
+%input-styles {
+    width: 15em;
+    border: none;
+    resize: none;
+    border-bottom: $border;
+}
+
+%input-styles--focus {
+    color: $black;
+    outline: none;
+}
+
+%input-styles--hover {
+
+}
+
+@mixin input-styles($styles, $focus_styles, $hover_styles) {
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    background-color: white;
+  }
+    $types: 'email', 'number', 'select', 'password', 'search', 'tel',
+            'text', 'url', 'color', 'date', 'datetime',
+            'datetime-local', 'month', 'time', 'week';
+
+    @each $type in $types {
+        input[type="#{$type}"] {
+            @extend #{$styles};
+
+            &:focus {
+                @extend #{$focus_styles};
+            }
+            &:hover {
+                @extend #{$hover_styles};
+            }
+
+        }
+    }
+
+    select,
+    textarea {
+        @extend #{$styles};
+
+        &:focus {
+            @extend #{$focus_styles};
+        }
+    }
+}
+
+@include input-styles('%input-styles', '%input-styles--focus', '%input-styles--hover');
+
+
+@mixin button($background, $colorinside, $color_hover_button) {
+  border:none;
+  padding:$input_padding;
+  margin-bottom: $input_margin;
+  text-decoration:none;
+  background: $background;
+  color: $colorinside;
+  cursor: pointer;
+  -webkit-appearance: none;
+  border-radius: 0;
+  &:hover {
+    background:$color_hover_button;
+    transition: all 0.3s ease;
+  }
+  &:active {
+    background:darken($background,25%);
+  }
+  &:focus {
+    outline: none;
+  }
+  &:disabled {
+    background:$color_disabled;
+  }
+}

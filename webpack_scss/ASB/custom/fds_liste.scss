@@ -1,0 +1,10 @@
+@import "../ASB.scss";
+
+$fds_liste: (
+  //@include liste_appellation_description
+  //$colgauche, $colgauche
+  null  : (40%, 60%),
+  small : (40%, 60%),
+  medium: (40%, 60%),
+  large : (40%, 60%),
+);

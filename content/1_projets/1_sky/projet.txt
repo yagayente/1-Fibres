@@ -1,0 +1,77 @@
+Title: Sky
+
+----
+
+Titre-page: Sky
+
+----
+
+Introduction: COOOOL
+
+----
+
+Date: 2020-02-25 16:45
+
+----
+
+Cover:
+
+- desert-tree.jpg
+
+----
+
+Headline: Stars and the universe and so on
+
+----
+
+Description: Et quoniam apud eos ut in capite mundi morborum acerbitates celsius dominantur, ad quos vel sedandos omnis professio medendi torpescit, excogitatum est adminiculum sospitale nequi amicum perferentem similia videat, additumque est cautionibus paucis remedium aliud satis validum, ut famulos percontatum missos quem ad modum valeant noti hac aegritudine colligati, non ante recipiant domum quam lavacro purgaverint corpus. ita etiam alienis oculis visa metuitur labes.
+
+----
+
+Tags: stars, universe, up there
+
+----
+
+Collaborators:
+
+- 
+  naming: Simon Bouchard
+  url: https://simonbouchard.fr/
+- 
+  naming: Test 2
+  url: ""
+
+----
+
+Liste:
+
+- 
+  appellation: 'Appelation 1 '
+  description: vpnjour
+
+----
+
+Details:
+
+- 
+  appel: ""
+  txt_appel: ""
+  naming: Nombre de pièces
+  url: "3"
+- 
+  appel: ""
+  txt_appel: ""
+  naming: 'Age '
+  url: "23"
+- 
+  appel: dzedz
+  txt_appel: dadzad
+
+----
+
+Collaborateurs:
+
+- 
+  naming: Jean Paul
+  url: https://github.com/aFarkas/lazysizes
+  platform: Jean Paul

@@ -1,0 +1,76 @@
+.projet {
+  width: 100%;
+  .article {
+  float: left;
+  width: 33.33333%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 50vw;
+  position: relative;
+  @include respond-to(small-screens)
+  {width: 50%; height: 70vw; }
+
+  &:nth-child(3n+1) {
+    .title{text-align: left;}
+    picture, .title{
+    @include respond-to(small-screens){padding: 0 $marge_small/2 0 $marge_small;}
+    @include respond-to(medium-screens){padding: 0 $marge_medium/2 0 $marge_medium;}
+    @include respond-to(wide-screens){padding: 0 $marge_large/2 0 $marge_large;}
+    }
+  }
+  &:nth-child(3n+2) {
+    .title{text-align: center;}
+    picture, .title{
+      @include respond-to(small-screens){padding: 0 $marge_small/2 0 $marge_small/2;}
+      @include respond-to(medium-screens){padding: 0 $marge_medium/2 0 $marge_medium/2;}
+      @include respond-to(wide-screens){padding: 0 $marge_large/2 0 $marge_large/2;}
+  }
+  }
+  &:nth-child(3n+3) {
+    .title{text-align: right;}
+    picture, .title{
+      @include respond-to(small-screens){padding: 0 $marge_small 0 $marge_small/2;}
+      @include respond-to(medium-screens){padding: 0 $marge_medium 0 $marge_medium/2;}
+      @include respond-to(wide-screens){padding: 0 $marge_large 0 $marge_large/2;}
+  }
+  }
+    picture {
+      position: absolute;
+      top: 0px;
+      height: 45vw;
+      width: 100%;
+      @include respond-to(small-screens)
+      {height: 65vw; }
+      img {
+       cursor: crosshair;
+       -webkit-filter: url(#traitement_couleur_1);
+       -moz-filter: url(#traitement_couleur_1);
+       -o-filter: url(#traitement_couleur_1);
+       -ms-filter: url(#traitement_couleur_1) ;
+       filter: url(#traitement_couleur_1) ;
+
+       -webkit-transition: opacity .15s;
+        -o-transition: opacity .5s;
+        transition: opacity .5s;
+       &:hover {
+        filter: none;
+        background-blend-mode: normal;
+      }
+      }
+    }
+    .title {
+      position: absolute;
+      bottom: 0px;
+      display: inline-block;
+      @include fds_typo_1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+      height: 5vw;
+    }
+
+}
+
+}

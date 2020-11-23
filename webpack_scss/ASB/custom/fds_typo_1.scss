@@ -1,0 +1,62 @@
+@import "../ASB.scss";
+
+// feuille de style typographique 1
+@font-face {
+    font-family: 'gt_flexaextended_light';
+    src: url('fonts/flexa/GT-Flexa-Extended-Light.woff2') format('woff2'),
+         url('fonts/flexa/GT-Flexa-Extended-Light.woff') format('woff');
+}
+
+@mixin fds_typo_1 {
+  @include lisibilite;
+  @include fontsize($fds1_fontsizes);
+  font-family: times;
+  color: $blue;
+  font-weight: normal;
+  font-style: normal;
+}
+
+$fds1_fontsizes: (
+  //@include fontsize
+  //$fontsize, $lineheight
+  null  : (30px, 30px),
+  small : (30px, 30px),
+  medium: (30px, 30px),
+  large : (30px, 30px),
+);
+
+$fds1_soulignement: (
+  //@include soulignement
+  //$epaisseur, $colorimetrie, $distance
+  null  : (15px, red, -3px),
+  small : (6px, blue, -3px),
+  medium: (3px, yellow, -3px),
+  large : (1px, orange, -3px),
+);
+
+$fds1_exposant: (
+  //@include exposant
+  //$pourcentage_taille, $distancetop
+  null  : (20%, -3px),
+  small : (20%, -3px),
+  medium: (80%, -3px),
+  large : (40%, -3px),
+);
+
+$fds1_surlignement: (
+  //@include surlignement
+  //$paddingleft, $paddingright, $color
+  null  : (19px, 19px, pink),
+  small : (19px, 19px, yellow),
+  medium: (19px, 19px, blue ),
+  large : (19px, 19px, pink),
+);
+
+$fds1_barre: (
+  //@include surlignement
+  //$epaisseur_barre, $distance_barre, $padding_left, $padding_right
+  null  : (2px, 10px, 3px, 3px),
+  small : (2px, 10px, 3px, 3px),
+  medium: (10px, 9.3px, 10px, 10px),
+  large : (2px, 10px, 3px, 3px),
+);

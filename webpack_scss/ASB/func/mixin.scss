@@ -1,0 +1,142 @@
+@import "responsive.scss";
+
+$border_unit: px;
+$value_border: 1.7;
+$border_number_unit: $value_border + $border_unit;
+$border: $border_number_unit solid black;
+
+/* Border for Retina */
+$value_border_retina: 1.5;
+$border_retina: $value_border_retina + $border_unit;
+$border_retina: $border_retina solid black;
+
+@mixin responsive_margin($small, $medium, $wide) {
+  @include respond-to(small-screens) {margin: $small}
+  @include respond-to(medium-screens) {margin: $medium}
+  @include respond-to(wide-screens) {margin: $wide}
+}
+
+@mixin border_retina($dir) {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border-#{$dir}: $border_retina;
+}
+
+@mixin border($dir) {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border-#{$dir}: $border;
+  }
+
+@mixin fadein($time) {
+animation: fadein $time;
+ -moz-animation: fadein $time; /* Firefox */
+ -webkit-animation: fadein $time; /* Safari and Chrome */
+ -o-animation: fadein $time; /* Opera */
+}
+
+@mixin fadeout($time) {
+animation: fadeout $time;
+ -moz-animation: fadeout $time; /* Firefox */
+ -webkit-animation: fadeout $time; /* Safari and Chrome */
+ -o-animation: fadeout $time; /* Opera */
+}
+
+@mixin prefix($property, $value, $prefixes: ()) {
+    @each $prefix in $prefixes {
+      #{'-' + $prefix + '-' + $property}: $value;
+    } // Output standard non-prefixed declaration
+    #{$property}: $value;
+  }
+
+@mixin center-vertically-horizontally { // mettre le parent en position relative
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include prefix(transform, translate(-50%, -50%), 'webkit' 'ms');
+  }
+  @mixin center-vertically {// mettre le parent en position relative
+    position: absolute;
+    top: 50%;
+    @include prefix(transform, translateY(-50%), 'webkit' 'ms');
+  }
+  @mixin positiontop {// mettre le parent en position relative
+    position: absolute;
+    top: 0%;
+    @include prefix(transform, translateY(-0%), 'webkit' 'ms');
+  }
+  @mixin positionbottom {// mettre le parent en position relative
+    position: absolute;
+    bottom: 0%;
+    @include prefix(transform, translateY(-0%), 'webkit' 'ms');
+  }
+  @mixin positionbottom_and_center {// mettre le parent en position relative
+    position: absolute;
+    bottom: 0%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    @include prefix(transform, translateY(-0%) 'webkit' 'ms');
+  }
+  @mixin global_border {
+    box-sizing:border-box;  -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadeout {
+  0%   {opacity: 1; display: block;}
+  70%  {opacity: 0;}
+  100% {opacity: 0; display: none;}
+}
+@-moz-keyframes fadeout { /* Firefox */
+  0%   {opacity: 1; display: block;}
+  70%  {opacity: 0;}
+  100% {opacity: 0; display: none;}
+}
+@-webkit-keyframes fadeout { /* Safari and Chrome */
+  0%   {opacity: 1; display: block;}
+  70%  {opacity: 0;}
+  100% {opacity: 0; display: none;}
+}
+@-o-keyframes fadeout { /* Opera */
+  0%   {opacity: 1; display: block;}
+  70%  {opacity: 0;}
+  100% {opacity: 0; display: none;}
+}

@@ -1,0 +1,9 @@
+Title: Home
+
+----
+
+Titre-page: Page home
+
+----
+
+Introduction: Titre

@@ -1,0 +1,163 @@
+@import "../func/responsive.scss";
+@import "../func/colors.scss";
+@import "../func/mixin.scss";
+// 8 Novembre 2020
+
+
+// Calculateurs
+@function calculateRem($size) {$remSize: $size / 16px; @return $remSize * 1rem;}
+@mixin font-size($size) {font-size: calculateRem($size);}
+@function calculateRem_lh($size) {$remSize: $size / 16px; @return $remSize * 1rem;}
+@mixin line-height($size) {line-height: calculateRem_lh($size);}
+
+@mixin lisibilite{
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+text-rendering: optimizeLegibility;
+}
+
+$breakpoints: (
+small : "small-screens",
+medium: "medium-screens",
+large : "wide-screens"
+);
+
+  @mixin fontsize($fs-map, $fs-breakpoints: $breakpoints) {
+    @each $fs-breakpoint, $fs-font-size in $fs-map {
+      @if $fs-breakpoint == null {
+        @include make-font-size($fs-font-size);
+      }
+      @else {
+        @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+          $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+        }
+        @include respond-to($fs-breakpoint){
+          @include make-font-size($fs-font-size);
+        }
+      }
+    }
+  }
+@mixin make-font-size($fs-font-size) {
+  @if type-of($fs-font-size) == "list" {
+    font-size: nth($fs-font-size, 1);
+      @include font-size(nth($fs-font-size, 1));
+    @if (length($fs-font-size) > 1) {
+      line-height: nth($fs-font-size, 2);
+        @include line-height(nth($fs-font-size, 2))
+    }
+  }
+  @else {
+    font-size: $fs-font-size;
+  }
+}
+
+
+@mixin soulignement($soulign-map, $fs-breakpoints: $breakpoints) {
+position: relative;
+text-decoration: none;
+display:inline-block;
+&:after {
+  @each $fs-breakpoint, $soulignement in $soulign-map {
+    @if $fs-breakpoint == null {
+            @include ins;
+            border-bottom: 100px solid red;
+            bottom: 10px !important;
+            content: "";
+            left: 0; position: absolute; right: 0;
+    }
+    @else {
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @include respond-to($fs-breakpoint){
+          @if type-of($soulignement) == "list"  {
+            @include ins;
+            border-bottom: nth($soulignement, 1) solid nth($soulignement, 2);
+            bottom: nth($soulignement, 3) !important;
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+          }
+      }
+    }
+  }
+}
+}
+
+
+@mixin exposant($exposant-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $exposant in $exposant-map {
+    @if $fs-breakpoint == null {
+    }
+    @else {
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @include respond-to($fs-breakpoint){
+          @if type-of($exposant) == "list"  {
+            display:inline-block;
+            font-size: nth($exposant, 1);
+            vertical-align: top;
+            position: relative;
+            top: nth($exposant, 2);
+          }
+      }
+    }
+  }
+}
+
+
+@mixin surlignement($surlignement-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $surlignement in $surlignement-map {
+    @if $fs-breakpoint == null {
+    }
+    @else {
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @include respond-to($fs-breakpoint){
+          @if type-of($surlignement) == "list"  {
+            display:inline-block;
+            padding-left: nth($surlignement, 1);
+            padding-right: nth($surlignement, 2);
+            background-color: nth($surlignement, 3);
+          }
+      }
+    }
+  }
+}
+
+@mixin barre($barre-map, $fs-breakpoints: $breakpoints) {
+  position: relative;
+  text-decoration: none;
+  display:inline-block;
+  @each $fs-breakpoint, $barre in $barre-map {
+  @if type-of($barre) == "list"  {
+  padding-left: nth($barre, 3);
+  padding-right: nth($barre, 4);
+  }
+  }
+
+  &:after {
+    @each $fs-breakpoint, $barre in $barre-map {
+      @if $fs-breakpoint == null {
+      }
+      @else {
+        @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+          $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+        }
+        @include respond-to($fs-breakpoint){
+            @if type-of($barre) == "list"  {
+              border-bottom: nth($barre, 1) solid black;
+              top: nth($barre, 2);
+              content: "";
+              left: 0;
+              position: absolute;
+              right: 0;
+            }
+        }
+      }
+    }
+  }
+}

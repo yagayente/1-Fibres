@@ -1,0 +1,29 @@
+@import "../func/responsive.scss";
+@import "../func/colors.scss";
+@import "../func/mixin.scss";
+@import "../custom/fds_grid.scss";
+
+$nb_colonne: 3;
+$nb_gutter: 4;
+$show_hide: none; /* none ou block*/
+
+.grille_dev {
+  display: $show_hide;
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  .col {
+    float: left;
+    height: 100vh;
+    @include grid_size_col;
+  }
+  .gutter{
+    background-color: pink;
+    height: 100vh;
+    width: 10px;
+    float: left;
+  }
+}
