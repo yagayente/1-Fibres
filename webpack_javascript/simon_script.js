@@ -2,41 +2,66 @@ import barba from '@barba/core'; // npm install @barba/core
 import gsap from "gsap"; // npm install gsap
 import 'lazysizes'; // npm i lazysizes
 
+function scrolltop(){
+  window.scrollTo(0, 0);
+}
+
+
+
 function PageTransition(){
     var tl = gsap.timeline();
     tl.to('.rendu', {duration: 0.5, opacity: 0 })
 }
-function PageTransitionEnter(){
+
+
+function FadeInTitles(){
     var tl = gsap.timeline();
-    tl.from('.rendu', {duration: 0.5, opacity: 0 })
+    tl.from('.first, .second, .third, .fade, .out_content', {duration: 0.5, x: 0, opacity: 0}, '.5')
 }
 
-function ListeTransition(){
+function FadeOutTitles(){
     var tl = gsap.timeline();
-    tl.to('.liste', {duration: 0.5, opacity: 0 })
-}
-function ListeTransitionEnter(){
-    var tl = gsap.timeline();
-    tl.from('.liste', {duration: 0.5, opacity: 0 })
+    tl.to('.first, .second, .third, .fade, .out_content', {duration: 0.5, x: 0, opacity: 0})
 }
 
+
+function FadeInTitles_shop(){
+    var tl = gsap.timeline();
+    tl.from('.to_shop, .texte_shop_fade', {duration: 0.5, x: 0, opacity: 0}, '.3')
+}
 function contentAnimation(){
     var tl = gsap.timeline();
-
+    tl.from('.first', {duration: 0.5, x: 0, opacity: 0, stagger: 0.4 })
+    tl.from('.second', {duration: 0.5,  x: 0, opacity: 0, stagger: 0.4 }, '.3')
+    tl.from('.third', {duration: 0.5,  x: 0, opacity: 0}, '1.5')
 }
 
-function AddCurrentClass(){
-  var lien_actif = window.location.href;
-  var currentURLLink = document.querySelector("a.project_list_item[href='"+lien_actif+"']");
-  var parent = currentURLLink.parentNode;
 
-  const active = document.querySelector('.current');
-  if(active){
-    active.classList.remove('current');
-  }
-  parent.classList.add('current');
+
+//// SHOP ENTER (AVANT)
+function FadeOutTitles_shop(){
+    var tl = gsap.timeline();
+    tl.to('.to_shop', {duration: 0.2, x: 0, opacity: 0})
 }
 
+
+
+//// SHOP LEAVE
+
+
+function FadeOutShop() {
+  var tl = gsap.timeline();
+  tl.to('.leave_shop', {duration: 0.2, x: 0, opacity: 0})
+
+}
+function  FadeIn_when_BackFromShop(){
+  var tl = gsap.timeline();
+  tl.from('.back_from_shop', {duration: 0.2, x: 0, opacity: 0})
+}
+
+
+
+////
 
 function delay(n) {
     n = n || 2000;
@@ -48,65 +73,68 @@ function delay(n) {
 }
 
 
+
 barba.init({
     sync: true,
     transitions: [
         {
         name: 'default',
-        async beforeOnce(data) {
-          AddCurrentClass();
-        },
         async leave(data) {
             const done = this.async();
-            PageTransition();
-            await delay(700);
+            scrolltop();
+            await delay(400);
+            FadeOutTitles();
+            await delay(600);
             done();
 
         },
         async enter(date) {
-            PageTransitionEnter();
+            FadeInTitles();
         },
     },
     {
-        name: 'effet de fade pour la liste et la page lors de la fermeture',
-        from: {
-            custom: ({ trigger }) => {
-              if (trigger.classList && trigger.classList.contains('logo')) {
-                return true
-              }
-              if (trigger.classList && trigger.classList.contains('custom_transition')) {
-                return true
-              }
-            }
-          },
-          async leave(data) {
-            const done = this.async();
-            PageTransition();
-            ListeTransition(); // disparition de la liste
-            await delay(700);
-            done();
-        },
-        async enter(date) {
-            PageTransitionEnter();
-        },
-    },
-    {
-        name: 'Fade la liste lors de larrivé apres avoir été sur la home',
-        from: {
-            custom: ({ trigger }) => {
-              if (trigger.classList && trigger.classList.contains('go_to_post')) {
-                return true
-              }
-            }
-          },
-          async enter(data) {
-            ListeTransitionEnter();
-            AddCurrentClass();
-        },
-        async enter(date) {
-          PageTransitionEnter();
+    name: 'go_to_shop',
+    from: {
+        custom: ({ trigger }) => {
+          if (trigger.classList && trigger.classList.contains('go_to_shop')) {
+            return true
+          }
+        }
+      },
+      async leave(data) {
+          const done = this.async();
+          scrolltop();
+          await delay(400);
+          FadeOutTitles_shop();
+          await delay(100);
+          done();
+
+      },
+      async enter(date) {
+        FadeInTitles_shop();
       },
     },
+    {
+    name: 'leave_the_shop',
+    from: {
+        custom: ({ trigger }) => {
+          if (trigger.classList && trigger.classList.contains('leave_the_shop')) {
+            return true
+          }
+        }
+      },
+      async leave(data) {
+          const done = this.async();
+          scrolltop();
+          await delay(400);
+          FadeOutShop();
+          await delay(200);
+          done();
 
+      },
+      async enter(date) {
+        FadeIn_when_BackFromShop();
+      },
+    },
 ],
 })

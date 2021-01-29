@@ -1,0 +1,59 @@
+Title: Mavico
+
+----
+
+Titre-page: Mavico
+
+----
+
+Introduction: test nom collection
+
+----
+
+Date: 230
+
+----
+
+Texte-collection: Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reiq(link: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container text: ue publicae concessisti,) commemoratis praesertim offensionibus, te auctoritatem huius ordinis dignitatemqu
+
+----
+
+Cover:
+
+- 36_magasin-3-fibres-ebenistes.png
+
+----
+
+Description: 
+
+----
+
+Collaborators: 
+
+----
+
+Liste: 
+
+----
+
+Ontheshop: 
+
+----
+
+Showprice: 
+
+----
+
+Showlivraison: 
+
+----
+
+Toggle: 
+
+----
+
+Headline: Cool
+
+----
+
+Tags: Ohlala

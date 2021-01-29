@@ -1,0 +1,25 @@
+Caption: Une annotation
+
+----
+
+Alt: 
+
+----
+
+Photographer: 
+
+----
+
+License: 
+
+----
+
+Link: 
+
+----
+
+Template: image
+
+----
+
+Sort: 2

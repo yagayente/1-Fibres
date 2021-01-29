@@ -12,76 +12,210 @@
 
 <?php snippet('header') ?>
 
+
+
 <div data-barba="wrapper">
   <main data-barba="container" data-barba-namespace="about">
-    <?php snippet('menu') ?>
+
+    <div class="fond to_shop">
+
+    </div>
 
 
-    <div class="rendu">
 
-      <div class="presentation_page">
-        <?= html::h1($page->titre_page()) ?><?= html::p($page->introduction()) ?>
+    <div class="presentation_page to_shop back_from_shop">
+      <div class="titrage_page ">
+        <div class="heading">
+          <h1 class="first"><?= page('about')->titrage_intro() ?></h2>
+          <h2 class="first"><?= page('about')->explication_intro() ?></h2>
+        </div>
       </div>
+      <div class="contenu_secondaire">
 
 
-  <div class="layout">
-    <div class="col_left">
-          <?= html::h3($page->titrage1()) ?>
-          <p class="col"><?= $page->explication1() ?></p>
+          <ul class="liste_appellation_description second">
+            <li>
+              <div class="appellation"><?= page('about')->titragecontact() ?></div>
+              <div class="description"><?= (page('about')->infocontact()->kirbytext()) ?></div>
+            </li>
+            <li>
+              <div class="appellation ok">addresse</div>
+              <div class="description ok"><?= page('about')->address()->kirbytext()?></div>
+            </li>
+            <li>
+              <div class="appellation">email</div>
+              <div class="description"><?= page('about')->email() ?></div>
+            </li>
+            <li>
+              <div class="appellation">téléphone</div>
+              <div class="description"><?= page('about')->phone() ?></div>
+            </li>
 
-          <?= html::h3($page->titrage2()) ?>
-          <p class="col"><?= $page->explication2() ?></p>
+            <li>
+              <div class="appellation">&nbsp</div>
+
+              <div class="description">
+                <?php foreach ($page->social()->toStructure() as $liste): ?>
+
+                <a href="<?= $liste->url() ?>"><?= $liste->platform() ?></a>
+            <?php endforeach ?>
+            </div>
+            </li>
+            <?php snippet('filtrecouleur') ?>
+          </ul>
 
 
-    <div class="img_block">
-      <?php snippet('filtrecouleur') ?>
-
-      <div class="img_presentation" >
-          <?php if($image = $page->photo1()->toFile()): ?>
-          <picture class="back"><img src="<?= $image->url() ?>" alt="" data-sizes="auto" srcset="<?= $image->srcset([300, 800, 1024]) ?>" class="lazyload"></picture>
-          <?php endif ?>
-      </div>
-      <div class="img_presentation_sec" >
-          <?php if($image = $page->photo2()->toFile()): ?>
-          <picture class="back"><img src="<?= $image->url() ?>" alt="" data-sizes="auto" srcset="<?= $image->srcset([300, 800, 1024]) ?>" class="lazyload"></picture>
-          <?php endif ?>
       </div>
     </div>
 
-    <?= html::h3($page->titrage3()) ?>
-    <p class="center">
-    <?= $page->address()?><br>
-    <?= $page->email() ?><br>
-    <?= $page->phone() ?><br>
-    </p>
 
-    <div class="identitedeux">
-      <a class="logo" href="<?= $site->url() ?>">Fibres</a>
+
+    <div class="projet to_shop back_from_shop">
+
+    <div class="menu_fixed">
+
+      <div class="left">
+        <div class="bottom">
+          <a href="<?= $site->homePage()->url() ?>/"><H1>Fibres</h1></a>
+          </div>
+        </div>
+        <div class="right">
+          <div class="bottom">
+            <a class="active fade"><?= $pages->find('about')->title() ?></a>
+            <a class="go_to_shop fade" href="<?= $pages->find('shop')->url() ?>"><?= $pages->find('shop')->title() ?></a>
+          </div>
+          <a class="icon" href="<?= $site->homePage()->url() ?>/">F</a>
+
+        </div>
+
     </div>
-  </div>
+
+
+    <div class="rendu to_shop back_from_shop" id="about_back">
+
+
+
+          <div id="informations_one_about">
+              <div class="info_gauche out_content">
+
+                <div class="block">
+                <h3 ><?= page('about')->titrage_entreprise() ?></h3>
+                <p ><?= page('about')->explication_entreprise()->kirbytext() ?></p>
+                </div>
+
+              </div>
+
+              <div class="info_droite">
+
+                        <div class="img_block out_content">
+
+                          <div class="img_presentation_sec" >
+
+                            <?php if($image = page('about')->photo2()->toFile()): ?>
+                            <div class="back"><img src="<?= $image->url() ?>" alt="" data-sizes="auto" srcset="<?= $image->srcset([300, 800, 1024]) ?>" class="lazyload"></div>
+                            <?php endif ?>
+
+
+                          </div>
+
+                          <div class="description_image">
+                             <div class="bloc">
+                               <div class="vertical_text">
+                                 <?= page('about')->description_photo() ?>
+                              </div>
+                             </div>
+                          </div>
+                        </div>
+
+
+                        </p>
+            </div>
+          </div>
+
+
+          <div id="informations_two_about" class="rendu">
+            <div class="info_gauche out_content ">
+
+              <div class="block">
+              <h3><?= page('about')->titrage1() ?></h3>
+              <p><?= page('about')->explication1() ?></p>
+              </div>
+
+              <div class="block">
+              <h3><?= page('about')->titrage2() ?></h3>
+              <p><?= page('about')->explication2() ?></p>
+              </div>
+            </div>
+
+
+            <div class="info_droite out_content">
+
+
+              <div class="img_presentation" >
+
+                  <div class="img_presentation_atelier" >
+                  <?php if($image = page('about')->photo1()->toFile()): ?>
+                  <div class="back"><img src="<?= $image->url() ?>" alt="" data-sizes="auto" srcset="<?= $image->srcset([300, 800, 1024]) ?>" class="lazyload"></div>
+                  <?php endif ?>
+                  </div>
+
+
+                  <div class="description_image">
+                     <div class="bloc">
+                       <div class="vertical_text">
+                       <?= page('about')->description_photo_2() ?>
+                     </div>
+                     </div>
+                  </div>
+
+
+              </div>
+
+          </div>
+        </div>
 
 
 
 
-  <div class="col_droite">
-    <div class="content_right_bottom">
-    <ul>
-      <?php foreach ($page->social()->toStructure() as $social): ?>
-      <li><?= html::a($social->url(), $social->platform()) ?></li>
-      <?php endforeach ?>
-    </ul>
-  </div>
-  </div>
 
+        <div class="derniere_ligne_mobile ">
+          <ul class="liste_appellation_description">
+            <li>
+              <div class="appellation"><?= page('about')->titragecontact() ?></div>
+              <div class="description"><?= (page('about')->infocontact()) ?></div>
+            </li>
+            <li>
+              <div class="appellation">addresse</div>
+              <div class="description"><?= page('about')->address()->kirbytext()?></div>
+            </li>
+            <li>
+              <div class="appellation">email</div>
+              <div class="description"><?= page('about')->email() ?></div>
+            </li>
+            <li>
+              <div class="appellation">téléphone</div>
+              <div class="description"><?= page('about')->phone() ?></div>
+            </li>
+
+            <li>
+              <div class="appellation">&nbsp</div>
+
+              <div class="description">
+                <?php foreach ($page->social()->toStructure() as $liste): ?>
+
+                <a href="<?= $liste->url() ?>"><?= $liste->platform() ?></a>
+            <?php endforeach ?>
+            </div>
+            </li>
+            <?php snippet('filtrecouleur') ?>
+          </ul>
+        </div>
 
 </div>
-
-
-
-
 </div>
 </main>
 </div>
+
 
 
 <?php snippet('footer') ?>

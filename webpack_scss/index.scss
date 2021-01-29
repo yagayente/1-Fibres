@@ -1,88 +1,154 @@
-@import "ASB/ASB.scss";
+  @import "ASB/ASB.scss";
+  @import "ASB/custom/font_stack.scss";
+  @import "ASB/custom/fds_typo_1.scss";
+  @import "ASB/custom/fds_typo_2.scss";
+  @import "ASB/custom/fds_typo_3.scss";
+  @import "ASB/custom/fds_typo_3.scss";
+  @import "ASB/custom/fds_typo_4.scss";
+  @import "ASB/custom/fds_typo_5.scss";
+  @import "ASB/custom/fds_button_1.scss";
+  @import "ASB/custom/fds_grid.scss";
+  @import "ASB/custom/fds_liste.scss";
+  @import "ASB/custom/fds_zindex.scss";
+  @import "ASB/custom/menu_fixed.scss";
 
-@import "ASB/custom/fds_typo_1.scss";
-@import "ASB/custom/fds_typo_2.scss";
-@import "ASB/custom/fds_typo_3.scss";
-@import "ASB/custom/fds_couleurs.scss";
-@import "ASB/custom/fds_grid.scss";
-@import "ASB/custom/fds_liste.scss";
 
-@import "ASB/custom/page_home.scss";
-@import "ASB/custom/page_single.scss";
-@import "ASB/custom/page_about.scss";
+  @import "ASB/custom/page_home.scss";
+  @import "ASB/custom/page_single.scss";
+  @import "ASB/custom/page_about.scss";
+  @import "ASB/custom/page_shop.scss";
 
+  html {
+    scroll-behavior: smooth;
+    counter-reset: section;
+  }
 
-body{
-  @include fds_typo_1;
-  background-color: $couleur_fond;
+.renduold {
+  display: inline-block;
 }
 
-
-
-.header nav {
-  position: fixed;
-  right: 0;
-  width: 33.333%;
-  z-index: 99999;
-  @include respond-to(medium-screens){ padding: 0 $marge_medium 0 0;}
-  @include respond-to(wide-screens){ padding: 0 $marge_large 0 0;}
-  @include respond-to(small-screens)
-  {padding: 0 $marge_small 0 $marge_small; width: 100%; position: relative;}
-  li {
-    display: inline;
-    a {
-    @include fds2_typo_2;
-    color: $gris;
-  }
-  }
-  li.active{
-    a {color: $blue;}
-  }
-}
-
-.presentation_page, .identite {
-  width: 66.66%;
-  height: $hauteur_entete;
-  @include respond-to(small-screens)
-  {width: 100%;}
-}
-.presentation_page {
-  @include fds_typo_1;
-  position: relative;
-  text-align: center;
-  @include responsive_padding($marge_small 10% 0 10%, $marge_medium 10% 0 10%, $marge_large 10% 0 10%);
-
-  h1, h2 {
-    font-weight: bold;
-    display: inline;
-    @include responsive_padding(0 $marge_small 0 0, 0 $marge_medium 0 0, 0 $marge_large 0 0);
-  }
-  p {
-    text-align: center;
-    display: inline;
-  }
-}
-
-.identite{
-  position: fixed;
-  z-index: -1;
-  a.logo {
-    @include responsive_padding(0 0 $marge_small 0, 0 0 $marge_medium 0, 0 0 $marge_large 0);
-
+  body{
     @include fds_typo_1;
-    text-decoration: none;
-    @include positionbottom_and_center;
+    counter-reset: nom-compteur;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+
+.fond {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100%;
+  @include zindex(fixed, fond);
+  .left, .right {
+    width: 50vw;
+  }
+  .left {
+
   }
 }
 
+  .header nav {
+    @include zindex(fixed, introduction);
+    right: 0;
+    width: 33.333%;
+    @include respond-to(medium-screens){ padding: 0 $marge_medium 0 0;}
+    @include respond-to(small-screens)
+    {padding: 0 $marge_small 0 $marge_small; width: 100%; position: relative;}
+    @include respond-to(wide-screens){ padding: 0 $marge_large 0 0;}
+    li {
+      display: inline;
+      a {
+      @include fds2_typo_2;
+      color: $gris;
+      }
+    }
+    li.active{
+      a {color: $blue;}
+    }
+  }
+  .presentation_page {
+    @include fds_typo_1;
+    top:0px;
+    text-align: left;
+    position: fixed;
+    width: 100%;
+    background-color: $couleur_principale;
+    @include height;
+    .titrage_page {
+      margin-top: $border_number_unit;
+      @include width_left;
+      @include bord_arrondis;
+      height: 100%;
+      float: left;
+      background-color: $fond_bloc;
+        .heading {
+        position: relative;
+        height: 100%;
+        overflow-wrap: break-word;
+        @include responsive_padding($marge_small $marge_small $marge_small $marge_small, $marge_medium $marge_medium $marge_medium $marge_medium, $marge_large $marge_large $marge_large $marge_large);
+        .bottom_logo {
+          a {
+            @include fds2_typo_2;
+          }
+            @include positionbottom;
+            @include responsive_padding(0 0 $marge_small 0, 0 0 $marge_medium 0, 0 0 $marge_large 0);
+          }
+      }
+    }
+    .contenu_secondaire {
+      @include fds2_typo_2_sanshover;
+      @include responsive_padding($marge_small $marge_small $marge_small $marge_small, $marge_medium $marge_medium $marge_medium $marge_medium, $marge_large $marge_large $marge_large $marge_large);
+      @include width_right;
+      @include respond-to(small-screens){display: none;} ;
+      @include bord_arrondis;
+      margin-top: $border_number_unit;
+      background-color: $fond_bloc;
+      height: 100%;
+      float: left;
+      @include custom_appellation_description;
+      a { @include fds2_typo_2_couleur_link; }
+      .ok {
+        @include responsive_padding($marge_small/2 0 $marge_small/2 0, $marge_medium/2 0 $marge_medium/2 0, $marge_large/2 0 $marge_large/2 0);
+      }
+      .bottom_link {
+        @include positionbottom;
+        @include responsive_padding(0 0 $marge_small 0, 0 0 $marge_medium 0, 0 0 $marge_large 0);
+        a {
+          @include fds2_typo_2;
+        }
+      }
+    }
+    h1 {
+      font-weight: bold;
+      display: inline;
+    }
+    p {
+      text-align: left;
+      display: inline;
+    }
+  }
+
+  .identite{
+    position: fixed;
+    a.logo {
+      @include responsive_padding(0 0 $marge_small $marge_small, 0 0 $marge_medium $marge_medium, 0 0 $marge_large $marge_large);
+      @include fds2_typo_2;
+      text-decoration: none;
+      @include positionbottom;
+
+    }
+  }
 
 
-$fds1_liste_appellation_description: (
-  //$largeur_appellation, $largeur_description
-  null  : (40%, 40%),
-  small : (40%, 40%),
-  medium: (40%, 40%),
-  large : (40%, 40%),
-);
 
-ul.liste_appellation_description {}
+  $fds1_liste_appellation_description: (
+    //$largeur_appellation, $largeur_description
+    null  : (40%, 40%),
+    small : (40%, 40%),
+    medium: (40%, 40%),
+    large : (40%, 40%),
+  );
+
+  ul.liste_appellation_description {}

@@ -1,0 +1,47 @@
+Title: Magasin
+
+----
+
+Titre-page: Magasin
+
+----
+
+Introduction: Haec igitur Epicuri(link: https://getkirby.com/docs/guide/blueprints/tabs text:  non probo, inquam.) De cetero vellem equidem aut ipse doctrinis fuisset instructior est enim, quod tibi ita videri necesse est, non satis politus iis artibus, quas qui tenent, eruditi appellantur aut ne deterruisset alios a studiis. quamquam te quidem video minime es(email: mail@simonbouchard.fr text: se deterritum).
+
+----
+
+Photographie:
+
+- fibres-fauteuil-9.jpg
+
+----
+
+Shop-ferme: Rien à vendre (link: https://www.google.com/search?rlz=1C5CHFA_enFR926FR926&sxsrf=ALeKk03eAseK76jdqju8FErAoYGIt4PNjw%3A1608817376840&ei=4JrkX7TqMomIU5C8taAG&q=kirby+tobool+null&oq=kirby+tobool+null&gs_lcp=CgZwc3ktYWIQAzoECAAQHjoICAAQCBAHEB46BggAEAgQHlCSTVixYWDYZGgAcAB4AIABcIgB1AaSAQM2LjOYAQCgAQGqAQdnd3Mtd2l6wAEB&sclient=psy-ab&ved=0ahUKEwi02oTi3-btAhUJxBQKHRBeDWQQ4dUDCA0&uact=5 text: désolé)
+
+----
+
+Appellation-prix: Tarif
+
+----
+
+Appellation-commande: Sur commande
+
+----
+
+Appellation-livraison: Livraison
+
+----
+
+Appellation-acheter: Acheter
+
+----
+
+Appellation-consulter: Consulter l'article
+
+----
+
+Champs-vide: Nous consulter
+
+----
+
+Nous-consulter: Consult US

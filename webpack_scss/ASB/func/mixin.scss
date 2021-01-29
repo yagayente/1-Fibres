@@ -1,20 +1,73 @@
 @import "responsive.scss";
+@import "../custom/fds_couleurs.scss";
+@import "../custom/fds_zindex.scss";
 
 $border_unit: px;
-$value_border: 1.7;
+$value_border: 2;
 $border_number_unit: $value_border + $border_unit;
-$border: $border_number_unit solid black;
+
+// x2
+$value_border_x2: $value_border*2;
+$border_number_unitx2: $value_border_x2 + $border_unit;
+
+// divisé par 2
+$value_border_by2: $value_border/2;
+$border_number_unitby2: $value_border_by2 + $border_unit;
+
+// divisé par 4
+$value_border_by4: $value_border/4;
+$border_number_unitby4: $value_border_by4 + $border_unit;
+
+
+$width: $value_border_by2 + $value_border;
+$special_width: $width + $border_unit;
+
+
+$value_border_height: $value_border*1;
+$value_border_height_unit: $value_border_height + $border_unit;
+
+@mixin width_left {
+  width: calc(50% - #{$special_width});
+  margin-left: $border_number_unit;
+  margin-right: $border_number_unitby2;
+  @include respond-to(small-screens) {
+    width: calc(100% - #{$border_number_unitx2});
+    margin-left: $border_number_unit;
+    margin-right: $border_number_unit;
+  }
+}
+@mixin width_right {
+  width: calc(50% - #{$special_width});
+  margin-left: $border_number_unitby2;
+  margin-right: $border_number_unit;
+  @include respond-to(small-screens) {
+    width: calc(100% - #{$border_number_unitx2});
+    margin-left: $border_number_unit;
+    margin-right: $border_number_unit;
+  }
+}
+
+@mixin height {
+  height: calc(50vh - #{$value_border_height_unit});
+}
+$border_radius: 8px;
+@mixin bord_arrondis($p: null) {
+    @if ($p) {
+        border-radius: $p; // si je veux custom
+    } @else {
+        border-radius: $border_radius; // sinon base
+    }
+}
+
+
+$border: $border_number_unit solid;
+$border_hover: $border_number_unit solid red;
 
 /* Border for Retina */
 $value_border_retina: 1.5;
 $border_retina: $value_border_retina + $border_unit;
 $border_retina: $border_retina solid black;
 
-@mixin responsive_margin($small, $medium, $wide) {
-  @include respond-to(small-screens) {margin: $small}
-  @include respond-to(medium-screens) {margin: $medium}
-  @include respond-to(wide-screens) {margin: $wide}
-}
 
 @mixin border_retina($dir) {
   -webkit-font-smoothing: antialiased;
@@ -22,11 +75,61 @@ $border_retina: $border_retina solid black;
   border-#{$dir}: $border_retina;
 }
 
-@mixin border($dir) {
+@mixin border($dir, $color) {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    border-#{$dir}: $border;
+    border-#{$dir}: $border $color;
   }
+
+
+@mixin sticky($position, $zindex) {
+   // mettre une hauteur au parent @sticky_parent_height
+   // ajouter une valeur de zindex (sticky = nouvel empilement)
+   position: -webkit-sticky;
+   position: sticky;
+   position: -moz-sticky;
+   position: -ms-sticky;
+   position: -o-sticky;
+   top: $position;
+   z-index: map-get($z-index, $zindex);
+}
+@mixin sticky_parent_height($height) {
+  min-height: $height;
+  height:auto !important;
+  height: $height;
+}
+
+
+@mixin zindex($position, $nom_du_zindex_liste) {
+    position: $position; // absolute, relative, fixed
+    z-index: map-get($z-index, $nom_du_zindex_liste);
+  }
+
+// Filtre = nouveau stacking context
+@mixin filter($nom_du_filtre, $position, $nom_du_zindex_liste) {
+      -webkit-filter: url($nom_du_filtre);
+      -moz-filter: url($nom_du_filtre);
+      -o-filter: url($nom_du_filtre);
+      -ms-filter: url($nom_du_filtre) ;
+      filter: url($nom_du_filtre) ;
+      position: $position; // absolute, relative, fixed
+      z-index: map-get($z-index, $nom_du_zindex_liste);
+    }
+
+
+@mixin responsive_margin($small, $medium, $wide) {
+  @include respond-to(small-screens) {margin: $small}
+  @include respond-to(medium-screens) {margin: $medium}
+  @include respond-to(wide-screens) {margin: $wide}
+}
+
+@mixin responsive_function($func, $small, $medium, $wide) {
+  @include respond-to(small-screens) {#{$func}: $small}
+  @include respond-to(medium-screens) {#{$func}: $medium}
+  @include respond-to(wide-screens) {#{$func}: $wide}
+}
+
+
 
 @mixin fadein($time) {
 animation: fadein $time;
@@ -70,6 +173,19 @@ animation: fadeout $time;
     bottom: 0%;
     @include prefix(transform, translateY(-0%), 'webkit' 'ms');
   }
+
+
+  @mixin positionbottom_responsive_space ($bottomspace){
+    // mettre le nombre de marge façon multiplicateur
+    // mettre le parent en position relative
+    $bottomsmall: $bottomspace * $marge_small;
+    $bottommedium: $bottomspace * $marge_medium;
+    $bottomlarge: $bottomspace * $marge_large;
+    position: absolute;
+    @include respond-to(small-screens) {bottom: $bottomsmall; @include prefix(transform, translateY(-#{$bottomsmall}), 'webkit' 'ms');}
+    @include respond-to(medium-screens) {bottom: $bottommedium; @include prefix(transform, translateY(-#{$bottommedium}), 'webkit' 'ms');}
+    @include respond-to(wide-screens) {bottom: $bottomlarge; @include prefix(transform, translateY(-#{$bottomlarge}), 'webkit' 'ms');}
+  }
   @mixin positionbottom_and_center {// mettre le parent en position relative
     position: absolute;
     bottom: 0%;
@@ -85,6 +201,30 @@ animation: fadeout $time;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
   }
+@mixin vertical_text($hauteur_bloc_en_face) {
+    // de bas en haut
+    // parent en relative
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    transform-origin: top left;
+    position: absolute;
+    width: $hauteur_bloc_en_face;
+}
+
+
+@mixin compteur($nom_compteur) {
+  // permet d'ajouter un compteur en css
+  // ajouter au body : counter-reset: nom-compteur;
+  &:before {
+  content: counter($nom_compteur) "";
+  counter-increment: $nom_compteur;
+  }
+}
+
 
 @keyframes fadein {
     from {

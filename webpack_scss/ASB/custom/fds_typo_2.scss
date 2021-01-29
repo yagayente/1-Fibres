@@ -1,23 +1,141 @@
 @import "../ASB.scss";
 
+
 // feuille de style typographique 2 : LIEN
 @mixin fds2_typo_2 {
   @include lisibilite;
   @include fontsize($fds2_fontsizes);
-  font-family: times;
-  color: $blue;
+  font-family: arial;
+  text-decoration: none;
+  color: $ASB_green;
   font-weight: normal;
   font-style: normal;
-  text-decoration: none;
+  &:hover {
+    color: black;
+    cursor: pointer
+  }
 }
+@mixin fds2_typo_2_sanshover {
+  @include lisibilite;
+  @include fontsize($fds2_fontsizes);
+  font-family: arial;
+  text-decoration: none;
+  color: $ASB_green;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin fds2_typo_2_blanc {
+  @include lisibilite;
+  @include fontsize($fds2_fontsizes);
+  font-family: arial;
+  text-decoration: none;
+  color: $negatif_text !important;
+  font-weight: normal;
+  font-style: normal;
+  &:hover {
+    color: $couleur_texte;
+  }
+}
+@mixin fds2_typo_2_blanc_link {
+  &.active {
+    &::before {background-color: $link_shop !important;}
+  }
+  @include lisibilite;
+  @include fontsize($fds2_fontsizes);
+  font-family: arial;
+  text-decoration: none;
+  color: $link_shop !important;
+  font-weight: normal;
+  font-style: normal;
+  &:hover {
+    color: $link_shop !important;
+    &::before {
+      background-color: $link_shop;
+      border: 2px solid $link_shop;
+    }
+  }
+  &::before {
+    content: '';
+    display: inline-block;
+    $size: 12px;
+    @include Custom_responsive_from_a_list($fds2_cercle);
+    background-color: $couleur_principale_bloc;
+    border: 2px solid $link_shop;
+    margin-left: $marge_small/2;
+    margin-right: $marge_small/2;
+    padding-left: $marge_small/2; padding-right: $marge_small/2;
+  }
+}
+
+
+@mixin fds2_typo_2_couleur_link {
+  &.active {
+    &::before {background-color: $couleur_principale !important;}
+    &:hover  {
+      &::before {background-color: $hover !important;}
+    }
+  }
+  @include lisibilite;
+  @include fontsize($fds2_fontsizes);
+  font-family: arial;
+  text-decoration: none;
+  color: $couleur_principale !important;
+  font-weight: normal;
+  font-style: normal;
+  &:hover {
+    color: $hover !important;
+    &::before {
+      background-color: $hover;
+      border: 2px solid $hover;
+    }
+  }
+  &::before {
+    content: '';
+    display: inline-block;
+    $size: 12px;
+    @include Custom_responsive_from_a_list($fds2_cercle);
+    background-color: $blanc_principale;
+    border: 2px solid $couleur_principale;
+    margin-right: $marge_small/2;
+    padding-left: $marge_small/2; padding-right: $marge_small/2;
+  }
+}
+
+
+
+
 
 $fds2_fontsizes: (
   //@include fontsize
   //$fontsize, $lineheight
-  null  : (20px, 20px),
-  small : (20px, 20px),
-  medium: (20px, 20px),
-  large : (20px, 20px),
+  null  : (30px, 30px),
+  small : (30px, 30px),
+  medium: (30px, 30px),
+  large : (30px, 30px),
+);
+
+$fds2_cercle: (
+    "null"  : (
+      "border-radius": 10px,
+      "width":  20px,
+      "height":  20px,
+    ),
+    "small": (
+      "border-radius": 10px,
+      "width":  20px,
+      "height":  20px,
+    ),
+    "medium": (
+      "border-radius": 10px,
+      "width":  20px,
+      "height":  20px,
+    ),
+    "large" : (
+      "border-radius": 10px,
+      "width":  20px,
+      "height":  20px,
+    ),
 );
 
 $fds2_soulignement: (

@@ -1,5 +1,5 @@
 @import "../ASB.scss";
-
+@import "fds_couleurs.scss";
 // feuille de style typographique 1
 @font-face {
     font-family: 'gt_flexaextended_light';
@@ -10,21 +10,40 @@
 @mixin fds_typo_1 {
   @include lisibilite;
   @include fontsize($fds1_fontsizes);
-  font-family: times;
-  color: $blue;
+  font-family: 'Playfair Display', serif;
+  color: $ASB_green;
   font-weight: normal;
   font-style: normal;
+  text-decoration: none;
 }
 
+@mixin fds_typo_1_blanc {
+  @include fds_typo_1;
+  color: $negatif_text !important;
+}
+
+@mixin fds_typo_1_bold {
+  font-weight: bold !important;
+  @include fds_typo_1;
+}
+@mixin fds_typo_1_variant {
+  color: $negatif_text !important;
+  @include lisibilite;
+  @include fontsize($fds2_fontsizes);
+  font-family: $stack2;
+  color: $ASB_green;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+}
 $fds1_fontsizes: (
   //@include fontsize
   //$fontsize, $lineheight
-  null  : (30px, 30px),
-  small : (30px, 30px),
-  medium: (30px, 30px),
-  large : (30px, 30px),
+  null  : (70px, 70px),
+  small : (50px, 50px),
+  medium: (60px, 60px),
+  large : (70px, 70px),
 );
-
 $fds1_soulignement: (
   //@include soulignement
   //$epaisseur, $colorimetrie, $distance

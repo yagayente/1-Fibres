@@ -1,0 +1,93 @@
+@import "../ASB.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+
+
+@mixin fds_typo_4_Fibres {
+  &.active {
+    &::before {background-color: $couleur_principale !important;}
+  }
+  @include lisibilite;
+  @include fontsize($fds4_fontsizes);
+  font-family: $stack3;
+  text-transform: lowercase;
+  text-decoration: none;
+  color: $ASB_green !important;
+  font-weight: normal;
+  font-style: normal;
+  &:hover {
+    color: $hover !important;
+    &::before {
+      background-color: $couleur_principale;
+    }
+  }
+  &::before {
+    content: '';
+    display: inline-block;
+    $size: 12px;
+    @include Custom_responsive_from_a_list($fds4_cercle);
+    background-color: $fond_bloc;
+    border: 2px solid $couleur_principale;
+    margin-right: $marge_small/2;
+    padding-left: $marge_small/2; padding-right: $marge_small/2;
+  }
+}
+
+@mixin fds_typo_4_Fibres_shop {
+  @include lisibilite;
+  @include fontsize($fds4_fontsizes);
+  font-family: $stack3;
+  text-transform: lowercase;
+  text-decoration: none;
+  color: $link_shop !important;
+  font-weight: normal;
+  font-style: normal;
+  &:hover {
+    color: $link_shop !important;
+    &::before {
+      background-color: $link_shop;
+    }
+  }
+  &::before {
+    content: '';
+    display: inline-block;
+    $size: 12px;
+    @include Custom_responsive_from_a_list($fds4_cercle);
+    background-color: $couleur_principale_bloc;
+    border: 2px solid $link_shop;
+    margin-right: $marge_small/2;
+    padding-left: $marge_small/2; padding-right: $marge_small/2;
+  }
+}
+$fds4_cercle: (
+    "null"  : (
+      "border-radius": 10px,
+      "width":  20px,
+      "height":  20px,
+    ),
+    "small": (
+      "border-radius": 10px,
+      "width":  20px,
+      "height":  20px,
+    ),
+    "medium": (
+      "border-radius": 10px,
+      "width":  20px,
+      "height":  20px,
+    ),
+    "large" : (
+      "border-radius": 10px,
+      "width":  20px,
+      "height":  20px,
+    ),
+);
+
+
+$fds4_fontsizes: (
+  //@include fontsize
+  //$fontsize, $lineheight
+  null  : (30px, 30px),
+  small : (30px, 30px),
+  medium: (30px, 30px),
+  large : (30px, 30px),
+);

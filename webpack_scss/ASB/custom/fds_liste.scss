@@ -1,5 +1,36 @@
 @import "../ASB.scss";
 
+
+@mixin liste_ol {
+  ol.liste {
+    width: 100%;
+            list-style-type: none;
+            counter-reset: compteListe;
+            li{
+              display: block;
+              margin-left: 40px;
+                &:before{
+                  @include ol_li_before(40px, compteListe);
+
+                }
+            }
+
+          }
+      }
+
+@mixin custom_appellation_description {
+  ul.liste_appellation_description {
+    @include liste_appellation_description($fds_liste_2);
+    @include fds2_typo_3;
+    li .appellation {text-transform: uppercase; font-size: 90%;}
+    .description {
+      text-transform: uppercase;
+      a { @include fds_typo_3_color_link;}}
+    }
+    a { display: block; text-decoration: none; @include fds2_typo_3;}
+  }
+
+
 $fds_liste: (
   //@include liste_appellation_description
   //$colgauche, $colgauche
@@ -7,4 +38,14 @@ $fds_liste: (
   small : (40%, 60%),
   medium: (40%, 60%),
   large : (40%, 60%),
+);
+
+
+$fds_liste_2: (
+  //@include liste_appellation_description
+  //$colgauche, $colgauche
+  null  : ($tabulation, calc(100% - #{$tabulation})),
+  small : ($tabulation, calc(100% - #{$tabulation})),
+  medium: ($tabulation, calc(100% - #{$tabulation})),
+  large : ($tabulation, calc(100% - #{$tabulation})),
 );

@@ -1,5 +1,14 @@
 @import "../func/responsive.scss";
 
+@mixin ol_li_before($ol_ul_here, $nom_compteurok) {
+  width: $ol_ul_here;
+  margin-left: -$ol_ul_here;
+  content: counter($nom_compteurok) "";
+  counter-increment: $nom_compteurok;
+  display: inline-block;
+}
+
+
 @mixin liste_appellation_description($listeAD-map, $fs-breakpoints: $breakpoints) {
 width: 100%;
   @each $fs-breakpoint, $listeAD in $listeAD-map {
@@ -11,9 +20,14 @@ width: 100%;
       }
       @include respond-to($fs-breakpoint){
           @if type-of($listeAD) == "list"  {
-            .appellation {width: nth($listeAD, 1); float: left;}
-            .description {width: nth($listeAD, 2); float: left;}
-          }
+            .appellation {width: nth($listeAD, 1); float: left; overflow-wrap: break-word;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;}
+            .description {width: nth($listeAD, 2); float: left; overflow-wrap: break-word;}
+        }
       }
     }
   }
@@ -23,7 +37,6 @@ width: 100%;
 //TOUJOURS SPECIFIER UNE CLASS SINON TOUS LES UL SAUTES
 @mixin ul {list-style: none; }
 @mixin ol {counter-reset: number; list-style-type: none; }
-@mixin ol_li_before($ol_ul_here) { width: $ol_ul_here; margin-left: -$ol_ul_here; counter-increment: number; content: counter(number)"\a0"; display: inline-block; }
 @mixin ul_li_before($ol_ul_here) {width: $ol_ul_here; margin-left: -$ol_ul_here;  content: "-"; display: inline-block;  }
 @mixin ul_li_before_sansbullet($ol_ul_here) {width: $ol_ul_here; margin-left: -$ol_ul_here;  display: inline-block;  }
 
@@ -31,7 +44,6 @@ width: 100%;
 $largeur_du_glyph_fleche : 20px;
 
 #pageinfos ol li, #pageinfos ul li{display: block;}
-#pageinfos ol li::before {@include ol_li_before(20px)}
 #pageinfos ul {@include ul;}
 #pageinfos ul li::before {@include ul_li_before_sansbullet(20px)}
 

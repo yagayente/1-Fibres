@@ -1,12 +1,32 @@
 // Variable
 
-$couleur_fond: #abd9ff;
+$couleur_fond: #f1ecf1;
 $couleur_texte: black;
+$ASB_green: #fa5f2f;
+$ASB_green: #fa5f2f;
+
+$fond_bloc: #fcfcfc;
+$couleur_magasin: #5ea673;
+$fond_du_magasin: white;
+$couleur_principale: #{$ASB_green};
+
+// shop
+$couleur_principale_bloc: $couleur_principale; // shop
+$negatif_text: #4f3728;// shop
+$link_shop: white;
+
+$blanc_principale: $white;
+$ASB_lightgreen: white;
+
+$hover: $couleur_principale;
+$link: $hover;
+
+
 
 $black: black;
 $gris: gray;
-$white: white;
 $blue: blue;
-$green: #5cff8d;
+$ASB_white: white;
+$ASB_darkgreen: #0c4a3d;
 $yellow: yellow;
 $red: #ff6c5c;

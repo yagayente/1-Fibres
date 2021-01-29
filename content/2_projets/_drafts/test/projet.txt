@@ -1,0 +1,37 @@
+Title: Test
+
+----
+
+Date: 2021-01-22 08:50
+
+----
+
+Cover: 
+
+----
+
+Description: 
+
+----
+
+Collaborators: 
+
+----
+
+Liste: 
+
+----
+
+Ontheshop: false
+
+----
+
+Showprice: false
+
+----
+
+Showlivraison: false
+
+----
+
+Toggle: false

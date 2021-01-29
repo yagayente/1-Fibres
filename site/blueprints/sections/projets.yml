@@ -3,8 +3,10 @@
 # Sections can have different layouts and display additional information or a preview image
 # More about pages sections: https://getkirby.com/docs/reference/panel/sections/pages
 type: pages
-headline: projets
+headline: Projets et collections
 parent: kirby.page("projets")
-info: "{{ page.tags}} - {{ page.date.toDate('Y') }}"
-template: projet
+info: "{{ page.template }}"
 empty: No albums yet
+templates:
+  - projet
+  - collection

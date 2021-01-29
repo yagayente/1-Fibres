@@ -3,8 +3,10 @@
 @import "../func/mixin.scss";
 // 8 Novembre 2020
 
-
+$glyph_lien : ' \25CF';;
 // Calculateurs
+
+
 @function calculateRem($size) {$remSize: $size / 16px; @return $remSize * 1rem;}
 @mixin font-size($size) {font-size: calculateRem($size);}
 @function calculateRem_lh($size) {$remSize: $size / 16px; @return $remSize * 1rem;}
@@ -21,6 +23,52 @@ small : "small-screens",
 medium: "medium-screens",
 large : "wide-screens"
 );
+
+
+
+
+
+// Cela génère un responsive a partir d'un tableau complex et ça inclu les nom des css (margin height etc utilisé dans la liste directement)
+// $cercle: (
+//    "null"  : (
+//      "border-radius": 7.5px,
+//      "width":  15px,
+//      "height":  15px,
+//    ),
+
+
+@mixin Custom_responsive_from_a_list ($fs-map, $fs-breakpoints: $breakpoints)
+{
+@each $fs-breakpoint, $data in $fs-map
+  {@if $fs-breakpoint == null {
+  @include get_this($data);}
+  @else {
+  @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+  $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);  }
+  @include respond-to($fs-breakpoint){
+  @include get_this($data);}}
+  }
+}
+
+@mixin get_this($data) {
+  @each $size, $map in $data {
+  @if map-has-key($data, $size) {
+    #{$size}: map-get($data, $size);
+  }
+  }
+}
+// Old version
+@mixin get_this_OLDVERSION($data) {
+  @if map-has-key($data, width) {
+    width: map-get($data, width);
+    height: map-get($data, height);
+  }
+}
+
+
+
+
+
 
   @mixin fontsize($fs-map, $fs-breakpoints: $breakpoints) {
     @each $fs-breakpoint, $fs-font-size in $fs-map {

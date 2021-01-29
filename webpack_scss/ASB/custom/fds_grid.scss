@@ -2,30 +2,8 @@ $marge_small : 10px;
 $marge_medium : 10px;
 $marge_large : 10px;
 
-$hauteur_entete: 30vh;
+$tabulation: 170px;
+$hauteur_entete: 50vh;
+$hauteur_sticky_menu: 55px;
 
-@mixin responsive_padding($small, $medium, $wide) {
-  @include respond-to(small-screens) {padding: $small}
-  @include respond-to(medium-screens) {padding: $medium}
-  @include respond-to(wide-screens) {padding: $wide}
-}
-@mixin grid_size_col {
-  @include respond-to(small-screens) { width: calc((100% - (#{$nb_gutter} * #{$marge_small})) /  #{$nb_colonne}) ;}
-  @include respond-to(medium-screens) { width: calc((100% - (#{$nb_gutter} * #{$marge_medium})) /  #{$nb_colonne}) ;}
-  @include respond-to(wide-screens) { width: calc((100% - (#{$nb_gutter} * #{$marge_large})) /  #{$nb_colonne}) ;}
-}
-@mixin grid_it($nb_col, $nbgutter) {
-  @include respond-to(small-screens) { width: calc((100% - (#{$nb_gutter} * #{$marge_small})) /  #{$nb_colonne}) ;}
-  @include respond-to(medium-screens) { width: calc((((100% - (#{$nb_gutter} * #{$marge_medium})) /  #{$nb_colonne}) * #{$nb_col}) + #{$nbgutter} * #{$marge_medium});}
-  @include respond-to(wide-screens) { width: calc((100% - (#{$nb_gutter} * #{$marge_large})) /  #{$nb_colonne}) ;}
-}
-
-@mixin grid_it_small($nb_col, $nbgutter) {
-  @include respond-to(small-screens) { width: calc((((100% - (#{$nb_gutter} * #{$marge_small})) /  #{$nb_colonne}) * #{$nb_col}) + #{$nbgutter} * #{$marge_small});}
-}
-@mixin grid_it_medium($nb_col, $nbgutter) {
-  @include respond-to(medium-screens){ width: calc((((100% - (#{$nb_gutter} * #{$marge_medium})) /  #{$nb_colonne}) * #{$nb_col}) + #{$nbgutter} * #{$marge_medium});}
-}
-@mixin grid_it_large($nb_col, $nbgutter) {
-  @include respond-to(large-screens) { width: calc((((100% - (#{$nb_gutter} * #{$marge_large})) /  #{$nb_colonne}) * #{$nb_col}) + #{$nbgutter} * #{$marge_large});}
-}
+$hauteur_sticky_menu_minus_border: 53px; // - 2

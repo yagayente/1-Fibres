@@ -10,15 +10,16 @@ title: Site
 columns:
   # The first column has one section for the subpages of the `photography` page in card layout
   # It reuses the pages section defined in `/site/blueprints/sections/albums.yml`
-  - width: 2/2
+
+  - width: 1/2
     sections:
       projets: sections/projets
-  # The second column has two sections, `notes` and `pages`
-  - width: 2/2
+
+  - width: 1/2
     sections:
      pages:
         type: pages
-        create: default
         templates:
           - about
           - projets
+          - shop

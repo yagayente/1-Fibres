@@ -1,0 +1,13 @@
+
+@font-face {
+    font-family: 'nouvelle_policeregular';
+    src: url('nouvellepolice-regular-webfont.woff2') format('woff2'),
+         url('nouvellepolice-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+$stack1: 'Playfair Display', serif;
+$stack2: arial;
+$stack3: 'nouvelle_policeregular';

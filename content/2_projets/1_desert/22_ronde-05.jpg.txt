@@ -1,0 +1,25 @@
+Caption: blabla
+
+----
+
+Alt: 
+
+----
+
+Photographer: 
+
+----
+
+License: 
+
+----
+
+Link: 
+
+----
+
+Template: image
+
+----
+
+Sort: 1

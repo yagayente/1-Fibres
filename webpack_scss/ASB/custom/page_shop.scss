@@ -1,0 +1,262 @@
+
+
+.content_background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
+.shop {
+  background-color: $blanc_principale;
+  width: 100%;
+  top: calc(#{$hauteur_entete} - #{$hauteur_sticky_menu});
+  @include sticky_parent_height(50vh);
+  @include zindex(absolute, content);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .menu_fixed {
+  @include menu_fixed;
+  background-color: $blanc_principale !important;
+    .left {
+      background-color: $couleur_principale_bloc;
+      a {@include fds_typo_4_Fibres_shop;}
+    }
+    .right {
+      background-color: $couleur_principale_bloc;
+      a.icon {
+        @include responsive_function(display, block, none, none);
+        @include bullet_two($link_shop, $couleur_principale_bloc);
+        position: absolute;
+        left: $marge_small;
+        bottom:$marge_small;
+      }
+      .bottom {
+      a {
+      @include fds_button_1($hover, $couleur_principale_bloc);  }
+
+      }
+    }
+  }
+  .mobileshop {
+    @include responsive_function(display, block, none, none);
+    @include bord_arrondis;
+    @include responsive_function(padding, $marge_small $marge_small $marge_small*2  $marge_small , $marge_medium $marge_medium $marge_medium*2 $marge_medium , $marge_large $marge_large $marge_large*2 $marge_large );
+    width: calc(100% - #{$border_number_unitx2});
+    min-height: 50vh;
+    margin-left: $border_number_unit;
+    margin-right: $border_number_unit;
+    background-color: $couleur_principale_bloc;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: $border_number_unit;
+    @include fds2_typo_2_blanc;
+    a { @include fds2_typo_2_blanc_link;}
+
+  }
+  .empty{
+    width: 100%;
+    @include height;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: $border_number_unit;
+    @include respond-to(small-screens) {
+        overflow-y: hidden;
+        display: flex; /* scroll right */
+        flex-wrap: nowrap;  /* scroll right */
+        overflow-x: auto; /* scroll right */
+        -webkit-overflow-scrolling: touch;  /* scroll right */
+        -ms-overflow-style: -ms-autohiding-scrollbar; /* scroll right */
+        &::-webkit-scrollbar {display: none; } /* scroll right */
+        margin-right: $border_number_unit;
+      }
+    .left {
+      @include fds2_typo_2_blanc;
+      a { @include fds2_typo_2_blanc_link;}
+      width: calc(50% - #{$special_width});
+      background-color: $couleur_principale_bloc;
+      margin-left: $border_number_unit;
+      position: relative;
+      height: 100%;
+      @include bord_arrondis;
+      @include responsive_function(padding, $marge_small $marge_small $marge_small*2  $marge_small , $marge_medium $marge_medium $marge_medium*2 $marge_medium , $marge_large $marge_large $marge_large*2 $marge_large );
+      @include respond-to(small-screens) {
+        flex: 0 0 auto; /* scroll right */
+        width: calc(80% - #{$border_number_unit});
+        margin-left:  $border_number_unit;
+        margin-right: $border_number_unit;
+        margin-bottom: $border_number_unit;
+      }
+    }
+    .right {
+      width: calc(50% - #{$special_width});
+      margin-left: $border_number_unit;
+      margin-right: $border_number_unitby2;
+      background-color: $couleur_principale_bloc;
+      @include bord_arrondis;
+      @include height;
+      .back {height: 100%;
+        img {
+         @include filter(#traitement_couleur_1, relative, content_inside)
+        }
+      }
+      @include respond-to(small-screens) {
+        flex: 0 0 auto; /* scroll right */
+        width: calc(100% - #{$border_number_unit});
+        margin-left: 0;
+        margin-right: $border_number_unit;
+        margin-bottom: $border_number_unit;
+      }
+    }
+
+
+  }
+
+  .article {
+    width: 100%;
+    @include height;
+    display: flex;
+    flex-direction: row;
+    @include respond-to(small-screens) {
+        overflow-y: hidden;
+        display: flex; /* scroll right */
+        flex-wrap: nowrap;  /* scroll right */
+        overflow-x: auto; /* scroll right */
+        -webkit-overflow-scrolling: touch;  /* scroll right */
+        -ms-overflow-style: -ms-autohiding-scrollbar; /* scroll right */
+        &::-webkit-scrollbar {display: none; } /* scroll right */
+        margin-right: $border_number_unit;
+      }
+    flex-wrap: wrap;
+    margin-bottom: $border_number_unit;
+    .shop_left {
+      width: calc(50% - #{$special_width});
+      margin-left: $border_number_unit;
+      @include respond-to(small-screens) {
+        width: calc(80% - #{$border_number_unitx2});
+        margin-left: $border_number_unit;
+        margin-right: 0;
+      }
+
+      flex: 0 0 auto; /* scroll right */
+      position: relative;
+      @include bord_arrondis;
+      .content_top {
+
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        height: 100px;
+        @include bord_arrondis($border_radius $border_radius 0 0);
+        top: $hauteur_sticky_menu_minus_border;
+        background-color: $couleur_principale_bloc;
+        z-index: 9;
+        @include respond-to(small-screens) {position: relative; top:0px; @include bord_arrondis($border_radius $border_radius 0 0);}
+        @include responsive_function(padding, $marge_small $marge_small $marge_small*2  $marge_small , $marge_medium $marge_medium $marge_medium*2 $marge_medium , $marge_large $marge_large $marge_large*2 $marge_large );
+        a {margin-right: $marge_small;}
+      }
+
+      h2 {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        @include fds2_typo_2_blanc;
+        }
+
+      .button {@include fds_button_1($hover, $couleur_principale_bloc); display: block; }
+      .button_commande {@include fds_button_2; display: block; }
+      .description_post {
+        width: 100%;
+        height: calc(100% - 100px);
+        @include bord_arrondis(0 0 $border_radius $border_radius);
+        background-color: $couleur_principale_bloc;
+        overflow: scroll;
+        @include positionbottom;
+        ul.liste_appellation_description {
+          text-transform: uppercase;
+          position:absolute;
+          bottom:0;
+          display: block;
+          max-height: 100%;
+          @include fds_typo_3_blanc;
+          width: 100%;
+          @include responsive_function(padding, $marge_small $marge_small $marge_small $marge_small, $marge_medium $marge_medium $marge_medium $marge_medium, $marge_large $marge_large $marge_large $marge_large);
+          @include liste_appellation_description($fds_liste);
+          .appellation p.prix {@include fds_typo_1_variant;}
+          .appellation p.prix_not {@include fds_typo_3_blanc; text-transform: uppercase;}
+          .description p.livraison {@include fds_typo_3_blanc; text-transform: uppercase;}
+          a {  @include fds_typo_3_blanc;}
+
+        }
+      }
+    }
+    .shop_right {
+      flex: 0 0 auto; /* scroll right */
+      width: calc(50% - #{$special_width});
+      margin-left: $border_number_unit;
+      margin-right: $border_number_unitby2;
+      @include respond-to(small-screens) {
+        width: calc(500px - #{$border_number_unitx2});
+        margin-left: $border_number_unit;
+        margin-right: $border_number_unitx2;
+
+      }
+
+      background-color: $couleur_principale_bloc;
+      @include bord_arrondis;
+      height: 100%;
+      .shop_inside {
+        height: 100%;
+        .back {height: 100%;}
+      }
+    }
+  }
+
+
+
+
+}
+
+
+
+.shop_page_header {
+  @include fds_typo_1;
+  top:0px;
+  text-align: left;
+  position: fixed;
+  width: 100%;
+  margin-top: $border_number_unit;
+  height: $hauteur_entete;
+  .titrage_page {
+    background-color: $couleur_principale_bloc;
+    @include width_left;
+    @include bord_arrondis;
+    height: 100%;
+    float: left;
+    .heading {
+      h2 {@include fds_typo_1_blanc;}
+      position: relative;
+      height: 100%;
+      @include responsive_padding($marge_small $marge_small $marge_small $marge_small, $marge_medium $marge_medium $marge_medium $marge_medium, $marge_large $marge_large $marge_large $marge_large);
+    }
+  }
+  .contenu_secondaire {
+    @include responsive_padding($marge_small $marge_small $marge_small $marge_small, $marge_medium $marge_medium $marge_medium $marge_medium, $marge_large $marge_large $marge_large $marge_large);
+    @include width_right;
+    @include bord_arrondis;
+    background-color: $couleur_principale_bloc;
+    height: 100%;
+    float: left;
+    @include fds2_typo_2_blanc;
+    @include respond-to(small-screens) { display: none;
+    }
+    a { @include fds2_typo_2_blanc_link;}
+  }
+}

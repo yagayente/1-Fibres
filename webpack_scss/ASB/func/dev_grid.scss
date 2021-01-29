@@ -3,9 +3,21 @@
 @import "../func/mixin.scss";
 @import "../custom/fds_grid.scss";
 
-$nb_colonne: 3;
-$nb_gutter: 4;
+
+$marge_small: 10px;
+$marge_medium: 10px;
+$marge_large: 10px;
+ /* grille sans goutiere*/
+$nb_colonne: 6;
 $show_hide: none; /* none ou block*/
+$size_border_grid: 1px;
+$grid_opacity: 0.5;
+
+@mixin responsive_padding($small, $medium, $wide) {
+  @include respond-to(small-screens) {padding: $small}
+  @include respond-to(medium-screens) {padding: $medium}
+  @include respond-to(wide-screens) {padding: $wide}
+}
 
 .grille_dev {
   display: $show_hide;
@@ -18,12 +30,14 @@ $show_hide: none; /* none ou block*/
   .col {
     float: left;
     height: 100vh;
-    @include grid_size_col;
-  }
-  .gutter{
-    background-color: pink;
+    width: calc(100% / #{$nb_colonne});
+    box-sizing:border-box;  -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+    padding-left: $size_border_grid; /* le border x2 */
+    padding-right: $size_border_grid;
+    box-shadow: 0 0 0 $size_border_grid green;
+    text-align: center;
+    opacity: $grid_opacity;
     height: 100vh;
-    width: 10px;
-    float: left;
+    z-index: -999;
   }
 }

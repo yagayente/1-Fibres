@@ -1,0 +1,25 @@
+Caption: Coucou j'écris un texte
+
+----
+
+Alt: 
+
+----
+
+Photographer: 
+
+----
+
+License: 
+
+----
+
+Link: 
+
+----
+
+Template: image
+
+----
+
+Sort: 1

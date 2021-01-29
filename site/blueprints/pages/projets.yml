@@ -2,7 +2,7 @@
 title: projets
 
 # Each page can have an icon that is shown in page listings when no preview image is available.
-icon: ☎️
+icon: bars
 
 # Limit the possible page statuses to `draft` and `listed`.
 # More about page statuses: https://getkirby.com/docs/reference/panel/blueprints/page#statuses
@@ -10,6 +10,10 @@ status:
   draft: true
   listed: true
 
+options:
+  changeTemplate:
+    - collection
+    - projet
 # Page options allow you to control how users can interact with the page.
 # Here we prevent changing the page slug and page deletion
 # More about page options: https://getkirby.com/docs/reference/panel/blueprints/page#options
@@ -29,6 +33,9 @@ columns:
       titre_page:
         label: Titre
         type: text
+  - width: 1/2
+
+    fields:        
       introduction:
         label: Introduction
         type: text

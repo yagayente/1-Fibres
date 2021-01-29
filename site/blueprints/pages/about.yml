@@ -2,7 +2,7 @@
 title: About us
 
 # Each page can have an icon that is shown in page listings when no preview image is available.
-icon: ☎️
+icon: heart
 
 # Limit the possible page statuses to `draft` and `listed`.
 # More about page statuses: https://getkirby.com/docs/reference/panel/blueprints/page#statuses
@@ -23,62 +23,116 @@ options:
 # More about columns: https://getkirby.com/docs/guide/blueprints/layout#defining-columns
 columns:
 
-  - width: 1/2
 
-    fields:
-      titre_page:
-        label: Titre
-        type: text
-      introduction:
-        label: Introduction
-        type: text
-      photo1:
-        label: image 1
-        type: files
-        max: 1
-      photo2:
-        label: image 2
-        type: files
-        max: 1
-  - width: 1/2
-    # Kirby has many different field types, from simple text fields to the more complex structure field that contains subfields
-    # All available field types: https://getkirby.com/docs/reference/panel/fields
-    fields:
-
-            titrage1:
-              label: Titrage
-              type: text
-            explication1:
-              label: Article 1
-              type: textarea
-            titrage2:
-              label: Titrage
-              type: text
-            explication2:
-              label: Article 2
-              type: textarea
-            titrage3:
-              label: Titrage
-              type: text
-
-      address:
-        label: Address
-        type: textarea
-      email:
-        label: Email
-        type: email
-      phone:
-        label: Phone
-        type: tel
-      social:
-        label: On the web
-        type: structure
+  main:
+    width: 2/3
+    sections:
+      # a simple form
+      description_atelier:
+        type: fields
         fields:
-          platform:
-            label: Platform
+          titrage_intro:
+            label: Titrage
             type: text
             width: 1/2
-          url:
-            label: URL
-            type: url
+          explication_intro:
+            label: Sous titrage
+            type: text
             width: 1/2
+      texteone:
+          type: fields
+          fields:
+            titrage_entreprise:
+              label: Titre 1
+              type: text
+              width: 1/4
+            explication_entreprise:
+              label: Article 1
+              type: textarea
+              width: 3/4
+              buttons:
+                - link
+                - email
+      part_second:
+          type: fields
+          fields:
+            titrage1:
+               label: Titre 2
+               type: text
+               width: 1/4
+            explication1:
+               label: Article 2
+               type: textarea
+               width: 3/4
+               buttons:
+                  - link
+                  - email
+            titrage2:
+              label: Titre 3
+              type: text
+              width: 1/4
+            explication2:
+              label: Article 3
+              type: textarea
+              width: 3/4
+              buttons:
+                  - link
+                  - email
+            photo1:
+                label: image 2
+                type: files
+                max: 1
+                width: 1/4
+            description_photo:
+                label: Description
+                type: text
+                width: 3/4
+            photo2:
+              label: image 1
+              type: files
+              max: 1
+              width: 1/4
+            description_photo_2:
+              label: Description
+              type: text
+              width: 3/4
+  sidebar:
+    width: 1/3
+    sections:
+      # a simple form
+      infos_globales:
+        type: fields
+        fields:
+          titragecontact:
+            label: Contact titre
+            type: text
+          infocontact:
+            label: Contact
+            type: textarea
+            buttons:
+                - link
+                - email
+          address:
+            label: Addresse
+            type: textarea
+            buttons:
+                - link
+                - email
+          email:
+            label: Email
+            type: email
+          phone:
+            label: Téléphone
+            type: tel
+          social:
+            label: Social
+            type: structure
+            fields:
+              platform:
+                label: Platform
+                type: text
+                width: 1/2
+              url:
+                label: URL
+                type: url
+                width: 1/2

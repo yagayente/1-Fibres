@@ -1,109 +1,162 @@
-.layout {
-    .col_left {
+@mixin s_prgph_01 {
 
-      z-index: 9999;
-      background-color: $couleur_fond;
-      @include grid_it_large(2, 1);
-      @include grid_it_medium(2, 1);
-      @include grid_it_small(3, 2);
+  .block {line-height: 0px; font-size: 10px; @include responsive_padding(0 $marge_small*4 $marge_small 0, 0 $marge_medium*4 $marge_medium 0 , 0 $marge_large*4 $marge_large 0 );}
+  h3 {@include fds_typo_5($stack1); display: inline-block; min-width: $tabulation;};
+  p {@include fds_typo_5($stack2); display: inline; }
+  a {@include petit_lien;  }
+}
 
-      @include responsive_margin
-      ( 0 0 0 $marge_small,
-        0 0 0 $marge_medium,
-        0 0 0 $marge_large);
-    H3 {
-      text-align: center;
-      @include fds_typo_1;
-      @include responsive_padding
-      ( $marge_small 0 $marge_small 0,
-        $marge_medium 0 $marge_medium 0,
-        $marge_large 0 $marge_large 0);
+
+@mixin block {
+  .block {
+    width: 100%;
+    &:first-child {margin-right: $marge_small;}
+    &:last-child {margin-bottom: $marge_small*5;}
+  }
+}
+
+
+
+#about_back {
+  min-height: 100vh;
+  background-color: $ASB_green;
+}
+#informations_one_about{
+  width: 100%;
+  float: left;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: $border_number_unit;
+  .info_gauche {
+    @include height;
+    @include width_left;
+    @include bord_arrondis;
+    background-color: $ASB_lightgreen;
+    @include s_prgph_01;
+    @include responsive_padding($marge_small $marge_small $marge_small*5 $marge_small, $marge_medium $marge_medium $marge_medium*5 $marge_medium, $marge_large $marge_large $marge_large*5 $marge_large);
+    @include respond-to(small-screens) {margin-bottom: $border_number_unit;}
+    .img_presentation {
+      width: 66.666%;
+      margin-left: 33.333%;
+      img {
+       @include filter(#traitement_couleur_1, relative, content_inside)
+      }
     }
-    p.col {
-       @include fds2_typo_2;
-       text-align: left;
-       column-gap: 2rem;
     }
-    p.center {
-      text-align: center;
-    }
-    p {
-       @include fds2_typo_2;
-       @include responsive_padding
-       ( 0 0 $marge_small 0, 0 0 $marge_medium 0, 0 0 $marge_large 0);
-    }
-    .identitedeux {
-      text-align: center;
-      @include responsive_padding
-      ( 0 0  $marge_small 0 ,
-        0 0 $marge_small 0 ,
-        0 0 $marge_small 0 );
-        a {
-                text-decoration: none;
-        }
-    }
+  }
+  .info_droite {
+    @include height;
+    @include bord_arrondis;
+    @include width_right;
     .img_block {
       width: 100%;
-      .img_presentation {
-        @include responsive_padding(0 $marge_small/2 0 0, 0 $marge_small/2 0 0, 0 $marge_small/2 0 0);
-      }
-      .img_presentation_sec {
-        float: left;
-        @include responsive_padding(0 0 0 $marge_small/2, 0 0 0 $marge_small/2, 0 0 0 $marge_large/2);
-      }
-      .img_presentation, .img_presentation_sec {
-        width: 50%;
-        float: left;
-        height: 50vw;
-        position: relative;
-        picture {
-          img {
-            width: 100%;
-            cursor: crosshair;
-            -webkit-filter: url(#traitement_couleur_1);
-            -moz-filter: url(#traitement_couleur_1);
-            -o-filter: url(#traitement_couleur_1);
-            -ms-filter: url(#traitement_couleur_1) ;
-            filter: url(#traitement_couleur_1) ;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
 
-            -webkit-transition: opacity .15s;
-             -o-transition: opacity .5s;
-             transition: opacity .5s;
-                &:hover {
-                 filter: none;
-                 background-blend-mode: normal;
-               }
+      .img_presentation_sec {
+        width: 90%;
+        @include respond-to(small-screens) {width: 90%;}
+        .back {
+          @include height;
+          img {
+           @include filter(#traitement_couleur_1, relative, content_inside)
+          }
+        }
+
+      }
+      .description_image {
+        @include fds_typo_3_blanc;
+          width: 10%;
+          @include respond-to(small-screens) {width: 10%;}
+          @include height;
+          position: relative;
+          .bloc {
+            bottom: 0;
+            position: absolute;
+            .vertical_text{
+              color: $fond_bloc;
+              @include vertical_text(calc(50vh - #{$value_border_height_unit}));
+              @include responsive_padding($marge_small/2 $marge_small 0 $marge_small, $marge_medium/2 0 0 0, $marge_large/2 0 0 0);
+
+            }
+         }
+      }
+    }
+  }
+
+#informations_two_about {
+  margin-bottom: $border_number_unit;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  .info_gauche  {
+    min-height: 100%;
+    @include bord_arrondis;
+    background-color: $ASB_lightgreen;
+    @include width_left;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    @include block;
+    @include s_prgph_01;
+    @include responsive_padding($marge_small $marge_small $marge_small $marge_small, $marge_medium $marge_medium $marge_medium $marge_medium, $marge_large $marge_large $marge_large $marge_large);
+    @include respond-to(small-screens) {margin-bottom: $border_number_unit;}
+  }
+.info_droite{
+    @include width_right;
+    @include s_prgph_01;
+    @include block;
+    .img_presentation {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      .img_presentation_atelier {
+        width: 90%;
+        @include respond-to(small-screens) {width: 90%;}
+        .back {
+          @include height;
+          img {
+            @include filter(#traitement_couleur_1, relative, content_inside)}
+        }
+        }
+
+
+
+      .description_image {
+        @include fds_typo_3_link;
+        @include height;
+          width: 10%;
+          @include respond-to(small-screens) {width: 10%;}
+          position: relative;
+          .bloc {
+            bottom: 0;
+            position: absolute;
+            .vertical_text{
+              color: $fond_bloc;
+            @include vertical_text(50vh);
+            @include responsive_padding($marge_small/2 $marge_small 0 $marge_small, $marge_medium/2 0 0 0, $marge_large/2 0 0 0);
           }
         }
       }
     }
-
-
-
-
   }
-  .col_droite {
-    width: 33.333%;
-    float: right;
-    right:0px;
-    bottom: 0;
-    position: fixed;
-    height: 100vh;
-    @include responsive_padding
-    ( 0 $marge_small 0 0,
-      0 $marge_medium 0 0,
-      0 $marge_large 0 0);
-    .content_right_bottom {
-      @include positionbottom;
-      @include responsive_padding
-      ( 0 0 $marge_small 0,
-        0 0 $marge_medium 0,
-        0 0 $marge_large 0);
-        ul {
-        @include fds2_typo_2;
-          a {  display: block; text-decoration: none;}
-        }
+
 }
 
-  }
+.derniere_ligne_mobile {
+  @include responsive_function(display, block, none, none);
+
+      @include bord_arrondis;
+      background-color: $blanc_principale;
+  width: calc(100% - #{$value_border_x2});
+  margin: 0 $border_number_unit $border_number_unit $border_number_unit;
+  padding: $marge_small $marge_small 0 $marge_small;
+  height: 50vh;
+  display: block;
+  color: white !important;
+  @include custom_appellation_description;
 }

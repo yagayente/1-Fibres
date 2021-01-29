@@ -1,0 +1,302 @@
+Title: À propos
+
+----
+
+Titrage-intro: Fibres Ébénistes
+
+----
+
+Explication-intro: Atelier basé dans le Jura
+
+----
+
+Titrage-entreprise: Atelier d'ébénistes
+
+----
+
+Explication-entreprise: Principium autem unde latius se funditabat, emersit ex negotio tali. Chilo ex vicario et coniux eius Maxima n(link: https://developer.mozilla.org/fr/docs/Web/CSS/overflow-wrap text: omine, questi apud Oly)brium ea tempestate urbi praefectum, vitamque suam venenis petitam adseverantes inpetrarunt ut hi, quos suspectati sunt, ilico rapti conpingerentur in vincula, organarius Sericus et Asbolius palaestrita et aruspex Campensis.
+
+----
+
+Titrage1: Design
+
+----
+
+Explication1:
+
+est fondamentale. Mandatée par le commanditaire, elle se divise en plusieurs étapes :
+
+- Il s’agit d’abord de recenser les fonctions, les nécessités et les envies, en gardant l’utilisateur au centre des attentions. 
+-  Fibres trace ensuite la ligne esthétique : Lise et Julien utilisent les volumes,matériaux, les finitions comme autant de variables ajustables.
+
+3. De l’analyse de ces éléments découle l’agencement des fonctionnalités au regard de l’ergonomie.
+4. La présentation prend la forme de visuels informatiques en trois dimensions qui permettent de visualiser et de s’approprier le futur objet et/ou espace. Ceux-ci sont accompagnés d’un devis de mise en œuvre, duquel sera déduit – en cas de commande – le coût du concept.
+
+----
+
+Titrage2: Fabrication
+
+----
+
+Explication2: Fibres utilise des matériaux commandés principalement auprès de fournisseurs locaux. Ils appliquent un savoir-faire artisanal, qu’ils font souvent co-exister avec des processus plus contemporains comme la découpe à la commande numérique. Un meuble ne se révèle complètement qu’à travers la finition, Fibres en fait sa spécialité, son empreinte. L’installation et la mise en service marquent l’aboutissement du projet.
+
+----
+
+Photo1:
+
+- fibres-fauteuil-681-2.jpg
+
+----
+
+Description-photo: Phrase d'introduction De l’analyse de ces éléme
+
+----
+
+Photo2:
+
+- fibres-fauteuil-532-1.jpg
+
+----
+
+Description-photo-2: 2 Phrase d'introduction De l’analyse de ces éléme
+
+----
+
+Titragecontact: Contact
+
+----
+
+Infocontact: l’atelier est ouvert du lundi au vendredi de 9h à 18h, Fibres répond à toutes vos questions ou demandes.
+
+----
+
+Address:
+
+(link: https://developer.mozilla.org/fr/docs/Web/CSS/overflow-wrap text: Mægazine Inc.
+Sesamestreet 1
+Gotham City
+USA)
+
+----
+
+Email: mail@maegazine.com
+
+----
+
+Phone: +49 1234 5678
+
+----
+
+Social:
+
+- 
+  platform: Twitter
+  url: https://twitter.com/getkirby
+- 
+  platform: Instagram
+  url: https://instagram.com/getkirby
+
+----
+
+Headline: dee
+
+----
+
+Text:
+
+Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,de a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
+
+The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way. On her way she met a copy.
+
+----
+
+Titre-page: Cressia, Jura — France
+
+----
+
+Introduction: +33(0)3 84 25 02 98 - contact@fibres-ebenistes.fr
+
+----
+
+Titrage3: Contact
+
+----
+
+Magallerie:
+
+- >
+  105992231-1561667465295gettyimages-521697453.jpg
+
+----
+
+Page: Information
+
+----
+
+Test-de-simon:
+
+Non ergo erunt homines deliciis diffluentes audiendi, si quando de amicitia, quam nec usu nec ratione habent cognitam, disputabunt. Nam quis est, pro deorum fidem atque hominum! qui velit, ut neque diligat quemquam nec ipse ab ullo diligatur, circumfluere omnibus copiis atque in omnium rerum abundantia vivere? Haec enim est tyrannorum vita nimirum, in qua nulla fides, nulla caritas, nulla stabilis benevolentiae potest esse fiducia, omnia semper suspecta atque sollicita, nullus locus amicitiae.
+
+Iis igitur est difficilius satis facere, qui se Latina scripta dicunt contemnere. in quibus hoc primum est in quo admirer, cur in gravissimis rebus non delectet eos sermo patrius, cum idem fabellas Latinas ad verbum e Graecis expressas non inviti legant. quis enim tam inimicus paene nomini Romano est, qui Ennii Medeam aut Antiopam Pacuvii spernat aut reiciat, quod se isdem Euripidis fabulis delectari dicat, Latinas litteras oderit?
+
+Non ergo erunt homines deliciis diffluentes audiendi, si quando de amicitia, quam nec usu nec ratione habent cognitam, disputabunt. Nam quis est, pro deorum fidem atque hominum! qui velit, ut neque diligat quemquam nec ipse ab ullo diligatur, circumfluere omnibus copiis atque in omnium rerum abundantia vivere? Haec enim est tyrannorum vita nimirum, in qua nulla fides, nulla caritas, nulla stabilis benevolentiae potest esse fiducia, omnia semper suspecta atque sollicita, nullus locus amicitiae.
+
+----
+
+Downloads:
+
+- >
+  proprete-degats-comportements-genants-comment-regler-les-problemes-causes-par-les-chats.jpg
+- download.jpg
+- >
+  105992231-1561667465295gettyimages-521697453.jpg
+
+----
+
+Contact:
+
+Kirby Magazine Inc.
+Sesamestreet 1
+Gotham City
+USA
+
+----
+
+Imagesc:
+
+- 
+  filename: >
+    105992231-1561667465295gettyimages-521697453.jpg
+  dragText: '(image: 105992231-1561667465295gettyimages-521697453.jpg)'
+  icon:
+    type: file-image
+    ratio: 5/4
+    back: pattern
+    color: '#de935f'
+    cover: true
+    url: >
+      http://localhost:8888/1-Fibres/media/pages/about/2c941f08fa-1604767508/105992231-1561667465295gettyimages-521697453.jpg
+    cards:
+      url: >
+        data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw
+      srcset: >
+        http://localhost:8888/1-Fibres/media/pages/about/2c941f08fa-1604767508/105992231-1561667465295gettyimages-521697453-352x.jpg
+        352w,
+        http://localhost:8888/1-Fibres/media/pages/about/2c941f08fa-1604767508/105992231-1561667465295gettyimages-521697453-864x.jpg
+        864w,
+        http://localhost:8888/1-Fibres/media/pages/about/2c941f08fa-1604767508/105992231-1561667465295gettyimages-521697453-1408x.jpg
+        1408w
+    list:
+      url: >
+        data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw
+      srcset: >
+        http://localhost:8888/1-Fibres/media/pages/about/2c941f08fa-1604767508/105992231-1561667465295gettyimages-521697453-38x38.jpg
+        1x,
+        http://localhost:8888/1-Fibres/media/pages/about/2c941f08fa-1604767508/105992231-1561667465295gettyimages-521697453-76x76.jpg
+        2x
+  id: >
+    about/105992231-1561667465295gettyimages-521697453.jpg
+  image:
+    ratio: 5/4
+    back: pattern
+    cover: true
+    url: >
+      http://localhost:8888/1-Fibres/media/pages/about/2c941f08fa-1604767508/105992231-1561667465295gettyimages-521697453.jpg
+    cards:
+      url: >
+        data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw
+      srcset: >
+        http://localhost:8888/1-Fibres/media/pages/about/2c941f08fa-1604767508/105992231-1561667465295gettyimages-521697453-352x.jpg
+        352w,
+        http://localhost:8888/1-Fibres/media/pages/about/2c941f08fa-1604767508/105992231-1561667465295gettyimages-521697453-864x.jpg
+        864w,
+        http://localhost:8888/1-Fibres/media/pages/about/2c941f08fa-1604767508/105992231-1561667465295gettyimages-521697453-1408x.jpg
+        1408w
+    list:
+      url: >
+        data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw
+      srcset: >
+        http://localhost:8888/1-Fibres/media/pages/about/2c941f08fa-1604767508/105992231-1561667465295gettyimages-521697453-38x38.jpg
+        1x,
+        http://localhost:8888/1-Fibres/media/pages/about/2c941f08fa-1604767508/105992231-1561667465295gettyimages-521697453-76x76.jpg
+        2x
+  info: 1600 × 900
+  link: >
+    /pages/about/files/105992231-1561667465295gettyimages-521697453.jpg
+  text: >
+    105992231-1561667465295gettyimages-521697453.jpg
+  type: image
+  url: >
+    http://localhost:8888/1-Fibres/media/pages/about/2c941f08fa-1604767508/105992231-1561667465295gettyimages-521697453.jpg
+  uuid: >
+    105992231-1561667465295gettyimages-521697453.jpg
+
+----
+
+Images:
+
+- 
+  filename: download.jpg
+  dragText: '(image: download.jpg)'
+  icon:
+    type: file-image
+    ratio: 3/2
+    back: pattern
+    color: '#de935f'
+    cover: false
+    url: >
+      http://localhost:8888/1-Fibres/media/pages/about/50726f3163-1604767508/download.jpg
+    cards:
+      url: >
+        data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw
+      srcset: >
+        http://localhost:8888/1-Fibres/media/pages/about/50726f3163-1604767508/download-352x.jpg
+        352w,
+        http://localhost:8888/1-Fibres/media/pages/about/50726f3163-1604767508/download-864x.jpg
+        864w,
+        http://localhost:8888/1-Fibres/media/pages/about/50726f3163-1604767508/download-1408x.jpg
+        1408w
+    list:
+      url: >
+        data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw
+      srcset: >
+        http://localhost:8888/1-Fibres/media/pages/about/50726f3163-1604767508/download-38x38.jpg
+        1x,
+        http://localhost:8888/1-Fibres/media/pages/about/50726f3163-1604767508/download-76x76.jpg
+        2x
+  id: about/download.jpg
+  image:
+    ratio: 3/2
+    back: pattern
+    cover: false
+    url: >
+      http://localhost:8888/1-Fibres/media/pages/about/50726f3163-1604767508/download.jpg
+    cards:
+      url: >
+        data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw
+      srcset: >
+        http://localhost:8888/1-Fibres/media/pages/about/50726f3163-1604767508/download-352x.jpg
+        352w,
+        http://localhost:8888/1-Fibres/media/pages/about/50726f3163-1604767508/download-864x.jpg
+        864w,
+        http://localhost:8888/1-Fibres/media/pages/about/50726f3163-1604767508/download-1408x.jpg
+        1408w
+    list:
+      url: >
+        data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw
+      srcset: >
+        http://localhost:8888/1-Fibres/media/pages/about/50726f3163-1604767508/download-38x38.jpg
+        1x,
+        http://localhost:8888/1-Fibres/media/pages/about/50726f3163-1604767508/download-76x76.jpg
+        2x
+  info: ""
+  link: /pages/about/files/download.jpg
+  text: download.jpg
+  type: image
+  url: >
+    http://localhost:8888/1-Fibres/media/pages/about/50726f3163-1604767508/download.jpg
+  uuid: download.jpg
+
+----
+
+Headlinedeux: gtrgthrth

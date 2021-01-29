@@ -1,0 +1,114 @@
+Title: La PanouilleLa PanouilleLa PanouilleLa PanouilleLa PanouilleLa PanouilleLa Panouille
+
+----
+
+Titre-page: La PanouilleLa PanouilleLa PanouilleLa PanouilleLa PanouilleLa PanouilleLa Panouille
+
+----
+
+Introduction: Ranger, exposer :<br>La cave à vin
+
+----
+
+Date: 2020-02-25 16:45
+
+----
+
+Cover:
+
+- 36_magasin-3-fibres-ebenistes.png
+
+----
+
+Description: Création de mobiliers pour le magasin. Espaces de paiement, présentation pain et viennoiseries. Étagère pour les pr oduits secs.
+
+----
+
+Collaborators:
+
+- 
+  naming: yo link
+  url: 'https://mail.google.com/mail/u/0/?pli=1#inbox'
+
+----
+
+Liste:
+
+- 
+  appellation: Matériaux
+  description: >
+    frêne MASSIF ET 3 PLIS ÉPICÉA, VERRE
+    TREMPÉ.
+- 
+  appellation: ""
+  description: "HUILE, VERNIS À L'EAU, PEINTURE ARDOISE."
+- 
+  appellation: Client
+  description: ""
+
+----
+
+Ontheshop: false
+
+----
+
+Showprice: false
+
+----
+
+Showlivraison: false
+
+----
+
+Toggle: false
+
+----
+
+Prix: 3000€
+
+----
+
+Delais-livraison: 2 a 4 semaines
+
+----
+
+Paypal: XXXXX
+
+----
+
+Headline: Stars and the universe and so on
+
+----
+
+Tags: 
+
+----
+
+Details:
+
+- 
+  appel: ""
+  txt_appel: ""
+  naming: Nombre de pièces
+  url: "3"
+- 
+  appel: ""
+  txt_appel: ""
+  naming: 'Age '
+  url: "23"
+- 
+  appel: dzedz
+  txt_appel: dadzad
+
+----
+
+Collaborateurs:
+
+- 
+  naming: Jean Paul
+  url: https://github.com/aFarkas/lazysizes
+  platform: Jean Paul
+
+----
+
+Category: shop

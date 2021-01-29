@@ -1,0 +1,82 @@
+Title: Table basse
+
+----
+
+Titre-page: Table basse
+
+----
+
+Introduction: Trois modèles de table basse circulaire
+
+----
+
+Date: 222020
+
+----
+
+Cover:
+
+- 22_ronde-02.jpg
+
+----
+
+Description: 
+
+----
+
+Collaborators:
+
+- 
+  naming: Simon Bouchard
+  url: >
+    https://www.google.com/intl/fr/gmail/about/
+
+----
+
+Liste:
+
+- 
+  appellation: MATÉRIAUX
+  description: 'NOYER MASSIF ET MDF LAQUÉ. '
+- 
+  appellation: FINITIONS
+  description: HUILE ET LAQUE JAUNE ORANGÉE.
+- 
+  appellation: Couleur
+  description: Pantone
+
+----
+
+Ontheshop: false
+
+----
+
+Showprice: true
+
+----
+
+Showlivraison: false
+
+----
+
+Toggle: false
+
+----
+
+Prix: 4000€
+
+----
+
+Delais-livraison: 4 5 semaines
+
+----
+
+Paypal: 
+
+----
+
+Headline: The desert is pretty hot
+
+----
+
+Tags: desert, sand, landscape

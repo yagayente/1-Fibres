@@ -1,0 +1,140 @@
+@import "../ASB.scss";
+
+
+@mixin fds_typo_5($font) {
+  @include fontsize($custom);
+  font-family: $font
+}
+
+@mixin button_link_before_after {
+  @include lisibilite;
+  @include fontsize($custom);
+  font-family: arial;
+  a {  text-decoration: none; color: $couleur_principale !important;
+    &:hover {
+      color: $hover !important;
+      &::before {
+        background-color: $hover;
+        border: 1px solid $hover;
+      }
+    }
+    &::before {
+      content: '';
+      display: inline-block;
+      $size: 12px;
+      @include Custom_responsive_from_a_list($fds5_cercle);
+      background-color: $blanc_principale;
+      border: 1px solid $couleur_principale;
+      margin-right: $marge_small/2;
+      padding-left: $marge_small/2; padding-right: $marge_small/2;
+    }
+  }
+}
+
+
+@mixin petit_lien {
+  &.active {
+    &::before {background-color: $couleur_principale !important;}
+    &:hover  {
+      &::before {background-color: $hover !important;}
+    }
+  }
+  @include lisibilite;
+  @include fontsize($custom);
+  font-family: arial;
+  text-decoration: none;
+  color: $couleur_principale !important;
+  font-weight: normal;
+  font-style: normal;
+  &:hover {
+    color: $hover !important;
+    &::before {
+      background-color: $hover;
+      border: 1px solid $hover;
+    }
+  }
+  &::before {
+    content: '';
+    display: inline-block;
+    $size: 12px;
+    @include Custom_responsive_from_a_list($fds5_cercle);
+    background-color: $blanc_principale;
+    border: 1px solid $couleur_principale;
+    margin-right: $marge_small/2;
+    padding-right: $marge_small/2;
+    margin-left: $marge_small;
+  }
+}
+
+
+
+
+@mixin petit_lien_deux {
+  &.active {
+    &::before {background-color: $couleur_principale !important;}
+    &:hover  {
+      &::before {background-color: $hover !important;}
+    }
+  }
+  @include lisibilite;
+  @include fontsize($custom);
+  font-family: arial;
+  text-decoration: none;
+  color: $couleur_principale !important;
+  font-weight: normal;
+  font-style: normal;
+  &:hover {
+    color: $hover !important;
+    &::before {
+      background-color: $hover;
+      border: 1px solid $hover;
+    }
+  }
+  &::before {
+    content: '';
+    display: inline-block;
+    $size: 12px;
+    @include Custom_responsive_from_a_list($fds5_cercle);
+    background-color: $blanc_principale;
+    border: 1px solid $couleur_principale;
+    margin-left: $marge_small/2;
+    margin-right: $marge_small/2;
+    padding-left: $marge_small/2; padding-right: $marge_small/2;
+  }
+}
+
+
+
+$custom: (
+  //@include fontsize
+  //$fontsize, $lineheight
+  null  : (17px, 20px),
+  small : (17px, 20px),
+  medium: (17px, 20px),
+  large : (17px, 20px),
+);
+
+
+// margin typo
+$fds5_cercle: (
+    "null"  : (
+      "border-radius": 6px,
+      "width":  12px,
+      "height":  12px,
+    ),
+    "small": (
+      "border-radius": 5px,
+      "width":  10px,
+      "height":  10px,
+    ),
+    "medium": (
+      "border-radius": 6px,
+      "width":  12px,
+      "height":  12px,
+    ),
+    "large" : (
+      "border-radius": 6px,
+      "width":  12px,
+      "height":  12px,
+    ),
+);

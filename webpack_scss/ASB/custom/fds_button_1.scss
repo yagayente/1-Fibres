@@ -1,0 +1,77 @@
+@import "../ASB.scss";
+
+
+@mixin fds_button_1($color, $backgroundcol) {
+  &.active {
+    &::before {background-color: $link_shop !important;}
+    &:hover  {
+      &::before {
+        background-color: $link_shop !important;
+      border: 2px solid $link_shop;}
+    }
+  }
+  @include lisibilite;
+  @include fds2_typo_2_blanc_link;
+  text-decoration: none;
+  color: $link_shop;
+  &:hover {
+    color: $link_shop !important;
+    &::before {
+      background-color: $link_shop;
+    }
+  }
+  &::before {
+    content: '';
+    display: inline-block;
+    $size: 12px;
+    @include Custom_responsive_from_a_list($fds2_cercle);
+    background-color: $backgroundcol;
+    border: 2px solid $link_shop;
+    margin-right: $marge_small/2;
+    margin-left: 0;
+    padding-left: $marge_small/2; padding-right: $marge_small/2;
+  }
+}
+
+
+
+@mixin fds_button_2 {
+  &.active {
+    &::before {background-color: $couleur_principale_bloc !important;}
+    &:hover  {
+      &::before {
+        background-color: $couleur_principale_bloc !important;
+      border: 2px solid $couleur_principale_bloc;}
+    }
+  }
+  @include lisibilite;
+  font-family: arial;
+  @include fontsize($fds2_fontsizes);
+  text-decoration: none;
+  color: $negatif_text;
+  &:hover {
+    color: $negatif_text !important;
+    &::before {
+      background-color: $negatif_text;
+    }
+  }
+  &::before {
+    content: '';
+    display: inline-block;
+    $size: 12px;
+    @include Custom_responsive_from_a_list($fds2_cercle);
+    background-color: $negatif_text;
+    border: 2px solid $negatif_text;
+    margin-right: $marge_small/2;
+    padding-left: $marge_small/2; padding-right: $marge_small/2;
+  }
+}
+
+$fds_button_fontsizes: (
+  //@include fontsize
+  //$fontsize, $lineheight
+  null  : (15px, 18px),
+  small : (15px, 18px),
+  medium: (15px, 18px),
+  large : (15px, 18px),
+);

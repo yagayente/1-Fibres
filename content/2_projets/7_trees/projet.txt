@@ -1,0 +1,83 @@
+Title: Bibliothèque
+
+----
+
+Titre-page: Bibliothèque
+
+----
+
+Introduction: Rangement de salon :<br>La bibliothèque
+
+----
+
+Date: 
+
+----
+
+Cover:
+
+- 43_bois-metal-5-fibres-ebenistes.jpg
+
+----
+
+Description:
+
+Travail sur l'asymétrie et la verticalité. La structure métallique trace les lignes directrices du projet et définit les espaces de rangement. Une partie basse fermée délimite la zone bureautique, tiroirs pour dossiers supendus, imprimante et réseau. Prendre de la hauteur pour ranger des livres, exposer des objets, classer et trier. Un équilibre entre plein et vide, ombre et lumière à travers les tôles métalliques ajourées.
+Ferronnerie réalisée par Lionel Roz
+
+----
+
+Collaborators:
+
+- 
+  naming: Lionel Roz
+  url: http://www.ferronnerie-roz.fr/
+
+----
+
+Liste:
+
+- 
+  appellation: MATÉRIAUX
+  description: >
+    FRÊNE PLAQUÉ ET MDF LAQUÉ, TUBE
+    MÉTALLIQUE
+- 
+  appellation: FINITIONS
+  description: "VERNIS À L'EAU, LAQUE JAUNE ORANGÉE ET NOIRE SATINÉE."
+
+----
+
+Ontheshop: false
+
+----
+
+Showprice: false
+
+----
+
+Showlivraison: false
+
+----
+
+Toggle: false
+
+----
+
+Prix: 4000€
+
+----
+
+Delais-livraison: 4 - 5 semaines
+
+----
+
+Paypal: 
+
+----
+
+Headline: Trees - our friends with leaves
+
+----
+
+Tags: tree, forest

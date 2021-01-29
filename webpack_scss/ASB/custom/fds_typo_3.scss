@@ -4,25 +4,133 @@
 // petit texte de description
 @mixin fds2_typo_3 {
   @include lisibilite;
-  @include fontsize($fds3_fontsizes);
+  @include fontsize($fds_3_fontsizes);
   font-family: arial;
-  color: $blue;
+  color: $ASB_green;
   text-decoration: none;
   font-weight: normal;
   font-style: normal;
   text-decoration: none;
 }
+@mixin fds2_typo_3_bold {
+  font-weight: bold !important;
+  @include fds2_typo_3;
+}
+@mixin fds_typo_3_link {
+  @include fds2_typo_3;
+}
+
+@mixin fds_typo_3_blanc {
+  @include lisibilite;
+  @include fontsize($fds_3_fontsizes);
+  font-family: arial;
+  color: $negatif_text;
+  text-decoration: none;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+}
+@mixin fds_typo_3_link {
+  color: $white !important;
+  @include fds2_typo_3;
+}
+
+@mixin fds_typo_3_color_link {
+  @include lisibilite;
+  @include fontsize($fds_3_fontsizes);
+  font-family: arial;
+  text-decoration: none;
+  color: $ASB_green !important;
+  font-weight: normal;
+  font-style: normal;
+  &:hover {
+    color: $hover !important;
+    &::before {
+      background-color: $couleur_principale;
+    }
+  }
+  &::before {
+    content: '';
+    display: inline-block;
+    $size: 12px;
+    @include Custom_responsive_from_a_list($fds3_cercle);
+    background-color: $fond_bloc;
+    border: 1px solid $couleur_principale;
+    margin-right: $marge_small/2;
+    padding-left: $marge_small/2; padding-right: $marge_small/2;
+  }
+}
+
+
+@mixin petit_lien {
+  &.active {
+    &::before {background-color: $couleur_principale !important;}
+    &:hover  {
+      &::before {background-color: $hover !important;}
+    }
+  }
+  @include lisibilite;
+  @include fontsize($fds_3_fontsizes);
+  font-family: arial;
+  text-decoration: none;
+  color: $couleur_principale !important;
+  font-weight: normal;
+  font-style: normal;
+  &:hover {
+    color: $hover !important;
+    &::before {
+      background-color: $hover;
+      border: 2px solid $hover;
+    }
+  }
+  &::before {
+    content: '';
+    display: inline-block;
+    $size: 12px;
+    @include Custom_responsive_from_a_list($fds2_cercle);
+    background-color: $blanc_principale;
+    border: 2px solid $couleur_principale;
+    margin-left: $marge_small/2;
+    margin-right: $marge_small/2;
+    padding-left: $marge_small/2; padding-right: $marge_small/2;
+  }
+}
 
 // margin typo
+$fds3_cercle: (
+    "null"  : (
+      "border-radius": 6px,
+      "width":  12px,
+      "height":  12px,
+    ),
+    "small": (
+      "border-radius": 5px,
+      "width":  10px,
+      "height":  10px,
+    ),
+    "medium": (
+      "border-radius": 6px,
+      "width":  12px,
+      "height":  12px,
+    ),
+    "large" : (
+      "border-radius": 6px,
+      "width":  12px,
+      "height":  12px,
+    ),
+);
 
-$fds3_fontsizes: (
+
+$fds_3_fontsizes: (
   //@include fontsize
   //$fontsize, $lineheight
-  null  : (12px, 13px),
-  small : (12px, 13px),
-  medium: (12px, 13px),
-  large : (12px, 13px),
+  null  : (15px, 19px),
+  small : (15px, 19px),
+  medium: (15px, 19px),
+  large : (15px, 19px),
 );
+
+
 
 $fds3_soulignement: (
   //@include soulignement

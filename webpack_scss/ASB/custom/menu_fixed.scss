@@ -1,0 +1,103 @@
+@mixin bullet_two($color, $colorfont) {
+  font-family: $stack3;
+  text-transform: uppercase;
+  text-decoration: none;
+display: inline-block;
+ width: 40px;
+ text-align: center;
+ font-size: 30px;
+ line-height: 45px;
+ height: 40px;
+ -moz-border-radius: 20px;
+ -webkit-border-radius: 20px;
+ border-radius: 20px;
+ color: $colorfont;
+ background-color: $color;
+ &:hover  {
+   color: $blanc_principale;
+   background-color: gray;
+   z-index: 999;
+ }
+}
+
+@mixin menu_fixed {
+  height: $hauteur_sticky_menu;
+  padding-bottom: $border_number_unit;
+  width: 100%;
+  background-color: $couleur_principale;
+  @include sticky(-$border_number_unit, menufixed);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  .left {
+    @include width_left;
+    @include bord_arrondis(0 0 $border_radius $border_radius);
+    @include respond-to(small-screens) {display: none;}
+    .bottom {
+      @include positionbottom;
+      width: 50%;
+      $pad: 3px;
+      @include responsive_padding($marge_small $marge_small $marge_small $marge_small, $marge_medium $marge_medium $marge_medium $marge_medium, $marge_large $marge_large $marge_large $marge_large);
+      a {display: inline;}
+}
+    h1 {display: inline;
+    }
+
+  }
+  .right {
+    @include width_right;
+    @include bord_arrondis(0 0 $border_radius $border_radius);
+    .bottom {
+      text-align: right;
+      width: 50%;
+      @include positionbottom;
+      $pad: 3px;
+      @include responsive_padding($marge_small $marge_small $marge_small $marge_small, $marge_medium $marge_medium $marge_medium $marge_medium, $marge_large $marge_large $marge_large $marge_large);
+      h2 {display: inline;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        direction: rtl;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;}
+      @include respond-to(small-screens) {
+        width: 90%;
+        margin-left: 10%;
+        display: inline;
+        h2 {width: 100%;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          direction: rtl;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;}
+      }
+
+    }
+    h2 {
+      @include fds2_typo_2_sanshover;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      direction: rtl;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;}
+    a.icon {
+      @include responsive_function(display, block, none, none);
+      @include bullet_two($couleur_principale, $blanc_principale);
+      position: absolute;
+      left: $marge_small;
+      bottom:$marge_small/1.2;
+    }
+    a.icon_deux {
+      @include responsive_function(display, block, none, none);
+      @include bullet_two($couleur_principale, $blanc_principale);
+      position: absolute;
+      left: $marge_small*5.5;
+      bottom:$marge_small/1.2;
+    }
+  }
+}

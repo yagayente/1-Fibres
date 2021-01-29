@@ -1,58 +1,259 @@
 @import "../ASB.scss";
+// bullet
 
-article {
+@mixin bullet($color, $colorfont) {
+display: inline-block;
+  font-family: arial;
+ width: 20px;
+ text-align: center;
+ font-size: 11px;
+ line-height: 20px;
+ height: 20px;
+ -moz-border-radius: 10px;
+ -webkit-border-radius: 10px;
+ border-radius: 10px;
+ color: $colorfont;
+ background-color: $color;
+}
 
 
-
-.col_left {
-  width: 66.666%;
-  float: left;
-  @include responsive_padding
-  ( 0 $marge_small 0 $marge_small,
-    0 $marge_medium/2 0 $marge_medium,
-    0 $marge_large/2 0 $marge_large);
-    @include respond-to(small-screens) {
-    width: 100%; display: inline-block; float: none;}
-  img {
+.projet_single {
     width: 100%;
-  }
-}
-.col_right {
-    width: 33.333%;
-    float: right;
-    right:0px;
-    bottom: 0;
-    position: fixed;
-    height: 100vh;
-    @include responsive_padding
-    ( 0 $marge_small 0 $marge_small,
-      0 $marge_medium 0 $marge_medium,
-      0 $marge_large 0 $marge_large);
-      @include respond-to(small-screens) {
-      width: 100%; display: inline-block; float: none; position: relative;
-      right: unset; height: unset; bottom: unset; padding-bottom: $marge_small;}
-    .content_right_top {
-      padding-top: $hauteur_entete;
-      @include fds2_typo_2;
-      @include respond-to(small-screens) {padding-top: $marge_small; padding-bottom: $marge_small;}
-    }
-    .content_right_bottom {
-      width: 100%;
-      @include positionbottom;
-      @include respond-to(small-screens) {
-        position: relative;
-      }
-      @include responsive_padding
-      ( 0 0 $marge_small 0,
-        0 0 $marge_medium 0,
-        0 0 $marge_large 0);
-        ul.liste_appellation_description {
-          @include liste_appellation_description($fds_liste);
-          @include fds2_typo_3;
-          a {  display: block; text-decoration: none;}
+          .content {
+            width: 100%;
+            @include zindex(relative, content);
+            background-color: $ASB_green;
+            .arrow_mobile {
+              @include responsive_function(display, block, none, none);
+              @include zindex(absolute, content_inside);
+              @include positionbottom;
+              bottom: 10px;
+              right: 10px;
+              background-color: red;
+              font-size: 300%;
+              @include bullet($ASB_white, $ASB_green);
+            }
+            .gallery {
+              width: 100%;
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+              @include respond-to(small-screens) {
+                width: calc(100% - #{$border_number_unitx2});
+                margin-left: $border_number_unit;
+                margin-right: $border_number_unit;
+                  overflow-y: hidden;
+                display: flex; /* scroll right */
+                flex-wrap: nowrap;  /* scroll right */
+                overflow-x: auto; /* scroll right */
+                -webkit-overflow-scrolling: touch;  /* scroll right */
+                -ms-overflow-style: -ms-autohiding-scrollbar; /* scroll right */
+                &::-webkit-scrollbar {display: none; } /* scroll right */
+              }
+              .image_article {
+                @include height;
+                @include respond-to(small-screens) {
+                  flex: 0 0 auto; /* scroll right */
+                  margin-right: $border_number_unit;
+                }
+                @include zindex(relative, content);
+                @include responsive_function(margin, 0 0 0 0, $border_number_unit 0 0 0, $border_number_unit 0 0 0);
+
+                .note {
+                  @include zindex(absolute, content_inside);
+                  @include positionbottom;
+                  bottom: 10px;
+                  left: 10px;
+                  @include compteur (nom-compteur);
+                  &:before {
+                   @include bullet($ASB_green, $fond_bloc);
+                  }
+                }
+                &:first-child {
+                  margin-left: $border_number_unit;
+                  margin-right: 25%;
+                  width: calc(50% - #{$special_width});
+                  margin-top: 0;
+
+                  @include respond-to(small-screens) {
+                    margin-right: $border_number_unit!important;
+                    margin-left: 0%;
+                    width: 100%;
+                  }
+                }
+                &:last-child {
+                  @include respond-to(small-screens) {
+                    margin-right: 0px !important;
+                  }
+                }
+                &:nth-child(3n+1) {
+                  width: calc(50% - #{$special_width});
+                  margin-left: $border_number_unit;
+                  margin-right: 25%;
+                  &:last-of-type {
+                    margin-right: 0%;
+                    }
+                  @include respond-to(small-screens) {
+                    margin-right: $border_number_unit!important;
+                    margin-left: 0%;
+                    width: 100%;
+                  }
+                  }
+                &:nth-child(3n+2) {
+                  @include width_left;
+                  @include height;
+                  &:last-of-type {
+                    // dernier ce type
+                    width: calc(50% - #{$special_width});
+                        @include respond-to(small-screens) {
+                        margin-left: 0%;
+                        width: 100%;
+                        }
+                    }
+                }
+
+                &:nth-child(3n+3) {
+                  @include width_right;
+                  @include height;
+                }
+
+                picture {
+                img {
+                padding: 0;
+                width: 100%;
+                }
+                }
+
+              }
+            }
+            .menu_fixed {
+              @include menu_fixed;
+              .left {
+                    background-color: $fond_bloc;
+                .bottom {
+                  a.typologo {
+                    @include fds_typo_4_Fibres;
+                  }
+                  a.typosimple {
+                    font-family: arial;
+                  }
+                  a {
+                    @include respond-to(small-screens) {  display: none;}
+                  }
+
+                }
+              }
+              .right {
+                  background-color: $fond_bloc;
+                .bottom {
+                  @include respond-to(small-screens) {height: $hauteur_sticky_menu_minus_border;}
+                    a { @include fds2_typo_2_couleur_link;
+                    }
+                }
+              }
+            }
         }
-}
+        .description_article {
+          padding-top: $border_number_unit;
+          background-color: $couleur_principale;
+          @include zindex(relative, content);
+          @include fds2_typo_3;
+          width: 100%;
+          height: calc(50vh - #{$hauteur_sticky_menu});
+          @include respond-to(small-screens) {height: unset; min-height: calc(50vh - #{$hauteur_sticky_menu});}
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          .info_left {
+            @include respond-to(small-screens) {display: none;}
+            @include width_left;
+            @include bord_arrondis($border_radius $border_radius $border_radius $border_radius );
+            height: 100%;
+            background-color: $fond_bloc;
+            @include responsive_function(padding, $marge_small $marge_small $marge_small $marge_small,  $marge_medium $marge_medium $marge_medium $marge_medium, $marge_large $marge_large $marge_large $marge_large);
+            @include liste_ol;
 
+          }
+          .info_right {
+            position: relative;
+            background-color: $fond_bloc;
 
-}
+            @include respond-to(small-screens) {
+              p.desktop_only {display: none;}
+              min-height: calc(50vh - #{$hauteur_sticky_menu});// Fixé en bas mais hateur adaptable
+              height: auto;// Fixé en bas mais hauteur adaptable
+              display: flex;// Fixé en bas mais hauteur adaptable
+              flex-direction: column;// Fixé en bas mais hateur adaptable
+            }
+                    .only_mobile{
+                      margin: 0;// Fixé en haut mais hauteur adaptable
+                          @include responsive_function(display, block,  none, none);
+                          padding-bottom: $marge_small;
+                          &:last-child {
+                            padding-bottom: $marge_small;
+                          }
+                        }
+                    .mobile {
+                          @include responsive_function(display, block,  none, none);
+                          @include liste_ol;
+                        }
+                    .mobile_at_bottom {
+                      margin-top: auto;// Fixé en bas mais hauteur adaptable
+                      ul.liste_appellation_description{
+
+                      }
+
+                      @include custom_appellation_description;
+                    }
+                      a.the_shop {
+                      @include fds_typo_3_color_link;
+                      margin-bottom: $marge_small;
+                    }
+                      @include width_right;
+                      @include bord_arrondis($border_radius $border_radius $border_radius $border_radius );
+                      background-color: $fond_bloc;
+                      height: 100%;
+                      @include responsive_function(padding, $marge_small $marge_small $marge_small $marge_small,  $marge_medium $marge_medium $marge_medium $marge_medium, $marge_large $marge_large $marge_large $marge_large);
+                  p.description {
+                  width: 100%;
+
+                  }
+                  ol {
+                                      margin-bottom: $marge_small;
+                  }
+                  a.only_mobile{
+                                      margin-top: $marge_small;
+                  }
+        }
+        .previousnext {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          padding-top: $border_number_unit;
+          height: $hauteur_sticky_menu;
+          background-color: $couleur_principale;
+          .prev {
+              width: calc(50% - #{$special_width});
+                margin-left: $border_number_unit;
+                margin-right: $border_number_unitby2;
+              @include bord_arrondis($border_radius $border_radius 0 0);
+              background-color: $fond_bloc;
+              text-align: left;
+              @include responsive_function(padding, $marge_small $marge_small $marge_small $marge_small,  $marge_medium $marge_medium $marge_medium $marge_medium, $marge_large $marge_large $marge_large $marge_large);
+              @include button_link_before_after;
+          }
+          .next {
+              width: calc(50% - #{$special_width});
+              margin-left: $border_number_unitby2;
+              margin-right: $border_number_unit;
+              @include bord_arrondis($border_radius $border_radius 0 0);
+              background-color: $fond_bloc;
+              text-align: left;
+              @include responsive_function(padding, $marge_small $marge_small $marge_small $marge_small,  $marge_medium $marge_medium $marge_medium $marge_medium, $marge_large $marge_large $marge_large $marge_large);
+              @include button_link_before_after;
+          }
+       }
+        }
+
 }
