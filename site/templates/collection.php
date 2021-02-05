@@ -17,25 +17,25 @@
 
 
 <div data-barba="wrapper" id="hello">
-  <main  class="site" data-barba="container" data-barba-namespace="collection">
+  <main  class="site" data-barba="container" data-barba-namespace="collection" class="to_shop">
 
-    <div class="fond to_shop">
+    <div class="fond ">
     </div>
 
 
-    <div class="renduold to_shop">
+    <div class="renduold ">
 
 
 
     <div class="presentation_page back_from_shop">
-      <div class="titrage_page to_shop">
+      <div class="titrage_page ">
         <div class="heading">
           <h1 class="first"><?= $page->titre_page() ?></h1>
           <p class="second"><?= $page->introduction() ?></p>
 
         </div>
       </div>
-      <div class="contenu_secondaire to_shop">
+      <div class="contenu_secondaire ">
         <div class="fade">
           <?= $page->texte_collection()->kirbytext() ?>
         </div>
@@ -47,7 +47,7 @@
 
 <div class="projet back_from_shop">
 
-<div class="menu_fixed to_shop">
+<div class="menu_fixed ">
 
   <div class="left">
       <div class="bottom">
@@ -99,7 +99,7 @@
 
 
 
-          <div class="article lazyload out_content to_shop" >
+          <div class="article lazyload out_content " >
               <a class="go_to_post" href="<?= $projet->url() ?>">
               <?php if($image = $projet->cover()->toFile()): ?>
 
@@ -120,7 +120,7 @@
     <?php endforeach ?>
 
 
-    <div class="previousnextcollection out_content to_shop">
+    <div class="previousnextcollection out_content ">
         <div class="precedent">  <?php if ($page->hasPrevListed()): ?><a href="<?= $page->prevListed()->url() ?>">Précédent</a><?php endif ?></div>
         <div class="suivant"><?php if ($page->hasNextListed()): ?><a href="<?= $page->nextListed()->url() ?>">Suivant</a><?php endif ?></div>
     </div>

@@ -7,3 +7,17 @@ Titre-page: Fibres
 ----
 
 Introduction: atelier d'ébénistes basé dans le Jura — FR
+
+----
+
+Google: Test goooooodadzdazdzadadazdzadzdazdzadzdazTest goooooodadzdazdzadadazdzadzdazdzadzdazTest fgoooooodadzdazdzadadazdzadzdazdzadzdazTest goooooodadzdazdzadadazdzadzdazdzadzdaz
+
+----
+
+Favicon:
+
+- favicon.ico
+
+----
+
+Seo: Test goooooodadzdazdzadadazdzadzdazdzadzdazTest goooooodadzdazdzadadazdzadzdazdzadzdazTest fgoooooodadzdazdzadadazdzadzdazdzadzdazTest goooooodadzdazdzadadazdzadzdazdzadzdaz

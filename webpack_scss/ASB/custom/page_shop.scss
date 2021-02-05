@@ -76,8 +76,8 @@
         margin-right: $border_number_unit;
       }
     .left {
-      @include fds2_typo_2_blanc;
-      a { @include fds2_typo_2_blanc_link;}
+      @include fds_typo_5($stack2);
+      a { @include petit_lien;}
       width: calc(50% - #{$special_width});
       background-color: $couleur_principale_bloc;
       margin-left: $border_number_unit;
@@ -180,19 +180,22 @@
         overflow: scroll;
         @include positionbottom;
         ul.liste_appellation_description {
-          text-transform: uppercase;
           position:absolute;
           bottom:0;
           display: block;
           max-height: 100%;
-          @include fds_typo_3_blanc;
+          @include fds_typo_5($stack2);
+          color: $negatif_text;
           width: 100%;
           @include responsive_function(padding, $marge_small $marge_small $marge_small $marge_small, $marge_medium $marge_medium $marge_medium $marge_medium, $marge_large $marge_large $marge_large $marge_large);
           @include liste_appellation_description($fds_liste);
+          li .appellation {text-transform: lowercase;}
           .appellation p.prix {@include fds_typo_1_variant;}
-          .appellation p.prix_not {@include fds_typo_3_blanc; text-transform: uppercase;}
-          .description p.livraison {@include fds_typo_3_blanc; text-transform: uppercase;}
-          a {  @include fds_typo_3_blanc;}
+          .appellation p.prix_not {@include fds_typo_5($stack2); text-transform: uppercase;}
+          .description p.livraison {@include fds_typo_5($stack2); text-transform: uppercase;}
+          .description p.livraison_sec {text-transform: lowercase;}
+          .lowercase  {text-transform: lowercase;}
+      a {  @include petit_lien_noir;}
 
         }
       }

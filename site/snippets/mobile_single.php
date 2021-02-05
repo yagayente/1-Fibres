@@ -44,7 +44,7 @@
 
       <p class="description only_mobile"><?= $page->description() ?></p>
 
-      <?php if ($page->toggle()->toBool() === true):  ?>
+      <?php if ($page->ontheshop()->toBool() === true):  ?>
       <a href="<?= $pages->find('shop')->url() ?>" class="the_shop only_mobile">Disponible dans le shop</a>
     <?php endif ?>
 

@@ -14,7 +14,7 @@ Date: 230
 
 ----
 
-Texte-collection: Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reiq(link: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container text: ue publicae concessisti,) commemoratis praesertim offensionibus, te auctoritatem huius ordinis dignitatemqu
+Description: Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reiq(link: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container text: ue publicae concessisti,) commemoratis praesertim offensionibus, te auctoritatem huius ordinis dignitatemqu
 
 ----
 
@@ -24,7 +24,7 @@ Cover:
 
 ----
 
-Description: 
+Texte-collection: Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reiq(link: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container text: ue publicae concessisti,) commemoratis praesertim offensionibus, te auctoritatem huius ordinis dignitatemqu
 
 ----
 

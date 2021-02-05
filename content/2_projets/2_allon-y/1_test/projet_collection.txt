@@ -32,7 +32,7 @@ Liste:
 
 ----
 
-Ontheshop: false
+Ontheshop: true
 
 ----
 

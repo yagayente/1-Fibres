@@ -37,7 +37,8 @@
       <div class="titrage_page">
         <div class="heading">
           <p class="first">
-            <h2 class="fade"><?= $page->titre_page() ?></h2><h3 class="fade"><?= $page->introduction() ?></h3>
+            <h2 class="fade"><?= $page->titre_page() ?></h2>
+            <h3 class="fade"><?= $page->introduction() ?></h3>
           </p>
         </div>
       </div>
@@ -65,7 +66,7 @@
           <?php foreach ($page->liste()->toStructure() as $liste): ?>
           <li>
             <div class="appellation"><?= $liste->appellation() ?><?php if ($liste->appellation()->isEmpty()): ?>&nbsp;<?php endif ?></div>
-            <div class="description"><?= $liste->description() ?><?php if ($liste->description()->isEmpty()): ?>&nbsp;<?php endif ?></div>
+            <div class="description lowercase"><?= $liste->description() ?><?php if ($liste->description()->isEmpty()): ?>&nbsp;<?php endif ?></div>
           </li>
           <?php endforeach ?>
            </ul>
@@ -156,8 +157,8 @@
                         <div class="info_right">
 
                           <p class="desktop_only description">
-                              <?php if ($page->toggle()->toBool() === true):  ?>
-                              <a href="<?= $pages->find('shop')->url() ?>" class="the_shop">Disponible dans le shop</a><br>
+                              <?php if ($page->ontheshop()->toBool() === true):  ?>
+                              <a href="<?= $pages->find('shop')->url() ?>" class="the_shop">Disponible dans le shop</a><br><br>
                             <?php endif ?>
 
                             <?= $page->description() ?>

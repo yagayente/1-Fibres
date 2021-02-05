@@ -36,6 +36,7 @@
     <div class="presentation_page">
       <div class="titrage_page">
         <div class="heading">
+          <h2 class="out_content "><?= $page->titre_page() ?></h2>
           <p class="first"><?= $page->introduction() ?></p>
         </div>
       </div>
@@ -61,7 +62,7 @@
           <?php foreach ($page->liste()->toStructure() as $liste): ?>
           <li>
             <div class="appellation"><?= $liste->appellation() ?><?php if ($liste->appellation()->isEmpty()): ?>&nbsp;<?php endif ?></div>
-            <div class="description"><?= $liste->description() ?><?php if ($liste->description()->isEmpty()): ?>&nbsp;<?php endif ?></div>
+            <div class="description lowercase"><?= $liste->description() ?><?php if ($liste->description()->isEmpty()): ?>&nbsp;<?php endif ?></div>
           </li>
           <?php endforeach ?>
            </ul>
@@ -149,8 +150,9 @@
                         <div class="info_right">
 
                           <p class="desktop_only description">
-                              <?php if ($page->toggle()->toBool() === true):  ?>
-                              <a href="<?= $pages->find('shop')->url() ?>" class="the_shop">Disponible dans le shop</a><br>
+
+                              <?php if ($page->ontheshop()->toBool() === true):  ?>
+                              <a href="<?= $pages->find('shop')->url() ?>" class="the_shop">Disponible dans le shop</a><br><br>
                             <?php endif ?>
 
                             <?= $page->description() ?>

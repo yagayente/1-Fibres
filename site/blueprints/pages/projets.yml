@@ -33,9 +33,15 @@ columns:
       titre_page:
         label: Titre
         type: text
-  - width: 1/2
-
-    fields:        
       introduction:
         label: Introduction
         type: text
+      google:
+        label: Description pour moteur de recherche
+        type: textarea
+        minlength: 150
+        maxlength: 300
+        buttons: false
+      favicon:
+        type: files
+        multiple: false

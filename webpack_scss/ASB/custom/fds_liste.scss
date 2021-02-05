@@ -21,13 +21,14 @@
 @mixin custom_appellation_description {
   ul.liste_appellation_description {
     @include liste_appellation_description($fds_liste_2);
-    @include fds2_typo_3;
-    li .appellation {text-transform: uppercase; font-size: 90%;}
-    .description {
-      text-transform: uppercase;
-      a { @include fds_typo_3_color_link;}}
+    @include fds_typo_5($stack2);
+    li .appellation {
+            text-transform: lowercase;
+        }
+        .lowercase {text-transform: lowercase; };
+    .description {a { @include petit_lien;} }
     }
-    a { display: block; text-decoration: none; @include fds2_typo_3;}
+    a { display: block; text-decoration: none; @include petit_lien;}
   }
 
 

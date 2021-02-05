@@ -119,23 +119,22 @@
                         <?php endif ?>
 
                         </div>
-                        <div class="description">
+                        <div class="description lowercase">
                           <?php if ($projet->showlivraison()->toBool() === true): ?>
                           <p class="livraison"><?= page('shop')->Appellation_livraison() ?>&#8239;:<br><?= $projet->delais_livraison() ?><?php if ($projet->delais_livraison()->isEmpty()): ?><?= page('shop')->Champs_vide() ?><?php endif ?></p>
-                        <?php else: ?><p><?= page('shop')->Appellation_livraison() ?>&#8239;:<br><?= page('shop')->Champs_vide() ?></p>
+                        <?php else: ?><p class="livraison_sec"><?= page('shop')->Appellation_livraison() ?>&#8239;:</p><p class="livraison_sec"><?= page('shop')->Champs_vide() ?></p>
                         <?php endif ?>
 
                         </div>
                       </li>
 
-                      <li class="leave_shop" style="width:100%; display: block;"><div class="appellation">&nbsp</div><div class="description">&nbsp</div></li>
 
 
 
                       <?php if ($projet->collaborators()->toStructure()->isNotEmpty()): ?>
                         <li class="leave_shop"> <div class="appellation">Collaborateurs</div>
                        <?php endif ?>
-                       <div class="description">
+                       <div class="description ">
                            <?php foreach ($projet->collaborators()->toStructure() as $collaborators): ?>
                              <?php if ($collaborators->url()->isNotEmpty()): ?>
                                <a href="<?= $collaborators->url()?>"
@@ -148,7 +147,7 @@
                       <?php foreach ($projet->liste()->toStructure() as $liste): ?>
                       <li class="leave_shop">
                         <div class="appellation"><?= $liste->appellation() ?><?php if ($liste->appellation()->isEmpty()): ?>&nbsp;<?php endif ?></div>
-                        <div class="description"><?= $liste->description() ?><?php if ($liste->description()->isEmpty()): ?>&nbsp;<?php endif ?></div>
+                        <div class="description lowercase"><?= $liste->description() ?><?php if ($liste->description()->isEmpty()): ?>&nbsp;<?php endif ?></div>
                       </li>
                       <?php endforeach ?>
                        </ul>

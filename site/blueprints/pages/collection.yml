@@ -33,7 +33,7 @@ columns:
         date:
             label: Année
             type: text
-        texte_collection:
+        description:
           label: Présentation collection
           type: textarea
           maxlength: 350

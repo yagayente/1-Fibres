@@ -157,7 +157,7 @@ display: inline-block;
           padding-top: $border_number_unit;
           background-color: $couleur_principale;
           @include zindex(relative, content);
-          @include fds2_typo_3;
+          @include fds_typo_5($stack2);
           width: 100%;
           height: calc(50vh - #{$hauteur_sticky_menu});
           @include respond-to(small-screens) {height: unset; min-height: calc(50vh - #{$hauteur_sticky_menu});}
@@ -177,7 +177,7 @@ display: inline-block;
           .info_right {
             position: relative;
             background-color: $fond_bloc;
-
+            @include fds_typo_5($stack2);
             @include respond-to(small-screens) {
               p.desktop_only {display: none;}
               min-height: calc(50vh - #{$hauteur_sticky_menu});// Fixé en bas mais hateur adaptable
@@ -206,7 +206,7 @@ display: inline-block;
                       @include custom_appellation_description;
                     }
                       a.the_shop {
-                      @include fds_typo_3_color_link;
+                      @include petit_lien;
                       margin-bottom: $marge_small;
                     }
                       @include width_right;
